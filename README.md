@@ -28,16 +28,16 @@ Primary + 0.5×secondary.
 | Lats | 9 | Pulldown wide D1 + Pulldown close D3 + DB Row D3 |
 | Upper back | 9 | Seated Row D2 + DB Row D3 + Rear Delt Fly D3 |
 | Side delts | 8 | Lat Raise DB D1 (4) + Lat Raise Cable D2 (4, lengthened bias) |
-| Rear delts | 4 | Rear Delt Fly / Face Pull D3 |
+| Rear delts | 8 | Rear Delt Fly / Face Pull D2 (4) + D3 (4) |
 | Quads | 9 | Belt Squat / Landmine Squat / Leg Ext / Leg Press / BSS — D1 + D2 |
-| Hamstrings | 9 | RDL D1 (3 hinge) + Leg Curl or SL RDL D1 (3) + Leg Curl or Nordic D3 (3) |
+| Hamstrings | 9 | **Knee-flexion 6** (Leg Curl / Nordic / Cable Curl — D1 + D3) + **Hinge 3** (RDL D1) |
 | Glutes | 9 | RDL + Hip Thrust + BSS |
 | Biceps | 9 | Incline / Hammer Curl D1 (3 stretched) + Spider / Cable Curl D2 (3 mid) + Preacher / Cable D3 (3) |
 | Triceps | 9 effective | Overhead D2A + Pushdown D2B + Pushdown D3A + Skullcrusher D3B + press carryover |
-| Calves | 6 | Heavy 6–10 D1 (3) + High-rep 12–15 D2 (3) |
+| Calves | 9 | Heavy 6–10 D1 (3) + High-rep 12–15 D2 (3) + D3 (3) |
 | Abs | 6 | Knee Raise D1 (3) + Cable Crunch / Hanging Leg Raise D3 (3) |
 
-> At BUR, the D1 hamstring slot is Single-Leg RDL (hip-hinge bias) since BUR has no hamstring curl machine — total hams is still 9 sets but the location split is 6 hinge + 3 knee-flex (BUR) vs 3 hinge + 6 knee-flex (Home).
+> **Hamstring honesty:** the 9 total is **6 genuine knee-flexion** (the half that RDLs miss) + **3 hinge** (RDL). RDL is *not* double-counted as knee-flexion. At BUR there's no leg-curl machine, so the D1 knee-flexion slot is a **cable hamstring curl** (ankle strap on the stack); if no strap is available, fall back to Single-Leg RDL and accept that week skews hinge. BUR's D3 knee-flexion is the Nordic.
 
 ---
 
@@ -82,7 +82,7 @@ Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION
 | 2 | Hip hinge | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s |
 | 3 | Vertical pull (wide) | Lat Pulldown (Cable) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s | Lat Pulldown (Cable) (BUR) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s |
 | 4 | Quad single-leg | Bulgarian Split Squat — 3×8–10/side · 120s | Belt Squat — 3×10–12 · 120s | Bulgarian Split Squat — 3×8–10/side · 120s | Split Squat (DB) — 3×10–12 · 120s |
-| 5 | Hamstrings | Lying Leg Curl (Home) — 3×10–12 · 90s | Standing Leg Curls — 3×10–12 · 90s | Single Leg RDL (DB) — 3×10–12 · 90s | Single Leg RDL (DB) — 3×10–12 · 90s |
+| 5 | Hamstrings (knee flexion) | Lying Leg Curl (Home) — 3×10–12 · 90s | Standing Leg Curls — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s |
 | 6 | Side delts | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s |
 | 7 | Biceps (stretched) | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s |
 | 8 | Calves (heavy) | Standing Calf Raise (DB) — 3×6–10 · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Calf Press (Machine) — 3×6–10 · 90s | Calf Press (Machine) — 3×6–10 · 90s |
@@ -98,9 +98,10 @@ Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION
 | 4a | Quad compound | Leg Extension (Home) — 4×10–12 · 120s | Belt Squat — 4×10–12 · 120s | Leg Press (Machine) (BUR) — 4×10–12 · 120s | Landmine Squat — 4×10–12 · 120s |
 | 4b | Quad isolation (B only) | — | Leg Extension (Home) — 2×12–15 · 60s | — | Leg Extension (Machine) — 2×12–15 · 60s |
 | 5 | Side delts (lengthened) | Lateral Raise (Cable) — 4×12–15 · 75s | Lateral Raise (Cable) — 4×12–15 · 60s | Lateral Raise (Cable) — 4×12–15 · 75s | Lateral Raise (Cable) — 4×12–15 · 60s |
-| 6 | Biceps (mid-range) | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s |
-| 7 | Triceps (lengthened on A) | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s |
-| 8 | Calves (high-rep) | Standing Calf Raise — 3×12–15 · 90s | Single Leg Standing Calf Raise (DB) — 3×12–15/side · 90s | Calf Press (Machine) — 3×12–15 · 90s | Calf Press (Machine) — 3×12–15 · 90s |
+| 6 | Rear delts | Rear Delt Reverse Fly (Cable) — 4×12–15 · 60s | Face Pull — 4×12–15 · 60s | Rear Delt Reverse Fly (Cable) — 4×12–15 · 60s | Face Pull (BUR) — 4×12–15 · 60s |
+| 7 | Biceps (mid-range) | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s |
+| 8 | Triceps (lengthened on A) | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s |
+| 9 | Calves (high-rep) | Standing Calf Raise — 3×12–15 · 90s | Single Leg Standing Calf Raise (DB) — 3×12–15/side · 90s | Calf Press (Machine) — 3×12–15 · 90s | Calf Press (Machine) — 3×12–15 · 90s |
 
 ### Day 3 — Posterior + Pull + Arms
 
@@ -113,76 +114,49 @@ Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION
 | 5 | Rear delts | Rear Delt Reverse Fly (DB) — 4×12–15 · 60s | Face Pull — 4×12–15 · 60s | Rear Delt Reverse Fly (Cable) — 4×12–15 · 60s | Face Pull (BUR) — 4×12–15 · 60s |
 | 6 | Biceps | Preacher Curl (DB) — 3×10–12 · 75s | Cross Body Hammer Curl — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s | Hammer Curl (Cable) — 3×10–12 · 75s |
 | 7 | Triceps (lateral/medial on A) | Triceps Rope Pushdown — 3×10–12 · 75s | Skullcrusher (BB) — Swiss — 3×10–12 · 90s | Triceps Rope Pushdown (BUR) — 3×10–12 · 75s | Skullcrusher (BB) — 3×10–12 · 90s |
-| 8 | Abs | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s |
+| 8 | Calves | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Calf Press (Machine) — 3×12–15 · 90s | Calf Press (Machine) — 3×12–15 · 90s |
+| 9 | Abs | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s |
 
 ---
 
 ## 5. Critique
 
-Four reviewers (Mike Israetel, Layne Norton, Pavel Tsatsouline, Andy Galpin) spawned in parallel; each refreshed on the persona's current published philosophy before delivering feedback in their voice. Verbatim below.
+Four reviewers (Mike Israetel, Layne Norton, Pavel Tsatsouline, Andy Galpin) were run as independent subagents, each refreshed on the persona's current published philosophy and asked to critique in their voice. The program was iterated across rounds until all four signed off. Final sign-off below; each verdict is verbatim.
 
-### Mike Israetel (Renaissance Periodization)
+**All four: APPROVE — no material changes needed.**
 
-**Critiques:**
-- Side delt volume is undercooked for an advanced lifter recovering LBM — 8 sets across two flavors is maintenance-tier when delts are notoriously volume-hungry and recover fast. You've got the frequency right but the magnitude wrong; this is the muscle that visibly sells the "I got my size back" look.
-- Rear delts at 4 sets is borderline insulting after 6+ years of training. One 4-set slot on D3 isn't going to move the needle, especially with zero direct rear delt work on D1 or D2 where horizontal pulls are doing most of the heavy lifting incidentally.
-- Hamstring volume is technically 9 but the knee-flexion bias is heavy (6 sets) versus 3 hinge sets. For an advanced lifter without BB squat, hinge-pattern hams should be the anchor, not the accessory — RDL/DB RDL deserves more love.
+### Mike Israetel (Renaissance Periodization) — APPROVE
+- **Rear delts:** Fixed. 4 to 8 sets across two weekly slots. Twice-a-week frequency, lands them squarely in the productive range for a stubborn, chronically underdone muscle.
+- **Hamstring accounting:** Fixed, and honest. You stopped laundering the RDL hinge as knee-flexion. Six genuine knee-flexion plus three hinge is real coverage of both functions, and both locations now do actual curls.
+- **Calves:** Fixed. 6 to 9 across three sessions with a heavy/high-rep split — exactly right for a tissue that lives on stimulus frequency.
+- **Remaining:** None that blocks. Abs at 6 is light but defensible at maintenance; biceps at 9 is your call.
 
-**Changes:**
-- Add 2 sets of rear delts to D1 and D2 (cable reverse fly or face pull, 12–15). Push side delts to 12 weekly sets by adding a third lat raise slot.
-- Bump RDL on D1A to 4×8–10; consider a second hinge slot on D3B replacing straight-arm pulldown.
+### Layne Norton (BioLayne) — APPROVE
+- **Rear delts:** Resolved. 4 to 8 sets, now 2×/wk with a dedicated slot. A real working dose at a meaningful frequency. The weak link is fixed.
+- **Hamstring accounting / BUR:** Resolved. The 9 is now honest — 6 true knee-flexion + 3 hinge — and both knee-flexion slots are genuine at both locations. You killed the RDL double-count and the BUR location-fragility.
+- **Calves:** Resolved. 6 to 9 across 3×/wk. Right direction and frequency.
+- **Remaining:** None that blocks. Still want autoregulation in writing, but you've made that call and it's defensible at this volume. Trap-bar's a nice optional, not a requirement.
 
-**Verdict:** Yes, defensible — solid skeleton, just underdosed on delts and slightly miscalibrated on ham pattern split.
+### Pavel Tsatsouline (StrongFirst) — APPROVE
+- **Rear-delt ratio:** Fixed. 8 rear : 9 arms is honest now. The posterior shoulder no longer pays in pennies while the arms feast. Eight quality sets across two days is enough frequency to grow them.
+- **Remaining:** None that blocks. Rows at six against nine vertical is lean, but upper back credited at nine carries it. Quads at nine without a spine-loaded squat is fine for hypertrophy — leg press and BSS drive the tissue. "A block need not be perfect to be productive. This one will put on muscle. Make every rep own its weight."
 
-### Layne Norton (BioLayne)
-
-**Critiques:**
-- Rear delts at 4 sets is under-dosed relative to your side delts (8) and upper back (9). Meta-analytic data (Schoenfeld/Baz-Valle) puts the hypertrophy dose-response curve well above 4 weekly sets for a 6+ yr trainee in a maintenance/recomp context. They're a small muscle that recovers fast — feed them.
-- No autoregulation. You're on a GLP-1, recovering ~10.5 lb LBM, training 3×/wk with no readiness check. RIR 1–2 is fine on paper, but appetite suppression plus sub-maintenance fueling history means session-to-session readiness will swing. A 1-question 1–10 readiness or velocity-loss heuristic costs nothing and protects the LBM you're trying to regain (Helms, Zourdos work on RPE/RIR fidelity).
-- Calves at 6 sets is light for a stubborn, high-MHC-I muscle in a 6-yr lifter. Literature (Ottinger 2023) supports 8–12+ for advanced.
-
-**Changes:**
-- Add 2 sets rear delts on D2 (face pull or reverse pec deck); add 1 calf set per session (calves to 9).
-- Insert a 1–10 readiness check; if ≤5, drop top set or shift to RIR 3.
-
-**Verdict:** Yes, defensible. Structurally sound, fixes are dose tweaks not redesign.
-
-### Pavel Tsatsouline (StrongFirst)
-
-**Critiques:**
-- Nine working sets for biceps and triceps next to one direct row variant for rear delts is vanity, not balance. Your posterior shoulder will be the weakest link, and weak links break first. Fix the ratio before you chase the pump.
-- Side delts get cable and dumbbell raises but no overhead press variant that loads them hard outside Day 2. One pressing slot owning the deltoid for the week is thin. Hypertrophy still answers to load on the biggest movement, not just to volume on the smallest.
-- Nordic ramp on Day 3 with hamstrings already worked Day 1 via RDL is generous. Eccentrics tax the tissue for days. Watch the overlap or you will blunt both.
-
-**Changes:**
-- Cut two sets from biceps. Add two sets of face pulls or reverse fly. Earn the symmetry.
-- Day 2: add a hard set or two of high-incline or seated DB press above the lateral raises. Press first, isolate after.
-
-**Verdict:** Solid bones, lazy shoulders, vain arms. Tighten it, and it will grow you back.
-
-### Andy Galpin (performance scientist)
-
-**Critiques:**
-- Side delt volume looks like 8 hard sets, but you're double-counting overlap from pressing. Real direct mid-delt stimulus is fine; the bigger issue is rear delts at 4 sets — under-dosed for someone with 6+ years training and a presumed forward-loaded upper-body history. Asymmetry risk, posture cost.
-- Hamstring "9 sets" conflates hinge and knee-flexion as if interchangeable. They aren't — biarticular function means you want both, but counting them into one bucket masks that knee-flexion is concentrated D1+D3 with a 72-hr gap and hinge sits alone on D1. For LBM recovery on a GLP-1 (blunted appetite, lower protein turnover headroom), I'd want cleaner separation and frequency.
-- Dropping the readiness check on Tsatsouline's authority is a rhetorical move, not a physiological one. On a GLP-1 in a recovery phase, HRV/sleep/sRPE gating is cheap insurance against junk volume.
-
-**Changes:**
-- Add 2 sets rear delt to Day 2 (face pull or reverse pec deck analog); pull 1 set from side delts if fatigue budget tight.
-- Reinstate a 30-second morning check (sleep, soreness, motivation 1–5); auto-cut top set or drop a back-off if two of three flag.
-
-**Verdict:** Defensible — structure, progression, and exercise selection fit the constraints; the volume distribution and removed autoregulation are the soft spots, not deal-breakers.
+### Andy Galpin (performance scientist) — APPROVE
+- **Rear delts:** Yes. 4 to 8 sets across two days, true 2× frequency. Clears the dose-response floor and the asymmetry/posture concern for a forward-loaded history.
+- **Hamstring separation / frequency:** Yes. The bucket is now honest — 6 knee-flexion at 2×/wk (D1+D3), hinge standing on its own. The 72-hr knee-flexion gap is closed.
+- **Remaining:** None blocking. Still thinks a 30-second readiness gate is cheap insurance on a GLP-1 recovery phase, but that is your settled call and Zone 2 is optional under the 3-session constraint — neither is a physiological deal-breaker.
 
 ---
 
-## 6. Open items to resolve
+## 6. Open items (optional, non-blocking)
 
-1. **Rear delts 4 → 6–7 sets** — all four reviewers converged. Highest priority. Add a 2–3 set face pull / reverse fly slot to Day 2 (between Lat Raise and Spider Curl).
-2. **Calves 6 → 9 sets** — Norton (persistent across rounds). Add a third weekly hit, e.g. on Day 3.
-3. **Side delts 8 → 12 sets** — Israetel only; Galpin satisfied at 8. Push if delts plateau.
-4. **Readiness check** — Norton and Galpin re-pitched it (1-question 1–10, or 3-metric sleep/soreness/motivation). Removed in this revision per the no-theater argument; reconsider if recovery markers drift.
-5. **Hinge/knee-flex hamstring split** — Israetel and Galpin both want cleaner separation. At BUR especially, the D1 ham slot is Single-Leg RDL (hinge) since there's no curl machine. Options: cable hamstring curl with ankle strap, stability ball curl, or add a second Home-only D1 ham curl set.
-6. **Deadlift option** — available at both locations, not currently programmed. Consider swapping D1A RDL for conventional or trap-bar deadlift if a heavier hinge stimulus is wanted.
+None of these block the program — the panel approved as-is. They're the dissents and upgrade paths to revisit if results stall.
+
+1. **Readiness check** — Norton and Galpin both still want a 30-second morning gate (1–10 score, or sleep/soreness/motivation). Removed by your call as "autoregulation theater." Reconsider if recovery markers drift on the GLP-1.
+2. **Side delts 8 → 12** — Israetel's earlier push; he approved at 8. Add a 3rd weekly hit if delts plateau.
+3. **Horizontal rows vs vertical pulls** — Tsatsouline notes rows (~6 sets) run lean against vertical pulls (~9). Upper back is covered at 9 total, but converting one pulldown slot to a heavy row is a free rebalance if mid-back thickness lags.
+4. **Deadlift / trap-bar** — available at both gyms, unprogrammed. Optional heavier-hinge stimulus; swap for D1A RDL if wanted.
+5. **Zone 2** — Galpin's standing suggestion: two 20-min nasal-breathing walks on off days. Additive, doesn't touch the 3 lifting sessions.
 
 **Not acted on, by design:**
 - Tsatsouline: collapse variants / heavy strength singles / cut bicep volume — off-phase for hypertrophy + LBM reaccrual.

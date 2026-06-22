@@ -75,6 +75,7 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
 | Hammer Curl (Cable) | `36E8F14E` | |
 | Hammer Curl (Dumbbell) | `7E3BC8B6` | |
+| Hamstring Curl (Cable) | _resolve at execution_ | BUR knee-flexion (ankle strap); fallback Single Leg RDL `937292AB` |
 | Hanging Knee Raise | `08590920` | |
 | Hanging Leg Raise | `F8356514` | |
 | Hip Thrust (Barbell) | `D57C2EC7` | |
@@ -122,7 +123,7 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Triceps Rope Pushdown | `94B7239B` | |
 | Triceps Rope Pushdown (BUR) | `b1e50859-2ce0-4d97-9d17-3a25ac3677cb` | yes |
 
-> Five IDs are placeholders (`Incline Curl (Dumbbell)`, `Landmine Squat`, `Lateral Raise (Cable)`, `Nordic Hamstring Curl`, `Spider Curl (Dumbbell)`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
+> Six IDs are placeholders (`Hamstring Curl (Cable)`, `Incline Curl (Dumbbell)`, `Landmine Squat`, `Lateral Raise (Cable)`, `Nordic Hamstring Curl`, `Spider Curl (Dumbbell)`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
 
 ---
 
