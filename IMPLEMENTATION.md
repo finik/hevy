@@ -85,7 +85,9 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Lat Pulldown (Cable) | `6A6C31A5` | |
 | Lat Pulldown (Cable) (BUR) | `36548ca5-cd4d-4c26-9c8b-58540e6b2c97` | yes |
 | Lat Pulldown – Close Grip (Cable) | `4E5257DE` | |
+| Lateral Raise (Cable) | _resolve at execution_ | |
 | Lateral Raise (Dumbbell) | `422B08F1` | |
+| Landmine Squat | _resolve at execution_ | |
 | Leg Extension (Home) | `d2db4633-eda0-4a53-9eb3-4b604e7d9ad8` | yes |
 | Leg Extension (Machine) | `75A4F6C4` | |
 | Leg Press (Machine) (BUR) | `78581019-7446-44be-bda6-83feb96f5352` | yes |
@@ -105,8 +107,10 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Arnold Press (Dumbbell) | `A69FF221` | |
 | Single Arm Cable Row | `D0C4A899` | |
 | Single Leg Hip Thrust (Dumbbell) | `D1CD146F` | |
+| Single Leg Romanian Deadlift (Dumbbell) | `937292AB` | |
 | Single Leg Standing Calf Raise (Dumbbell) | `5DA40761` | |
 | Skullcrusher (Barbell) | `875F585F` | |
+| Spider Curl (Dumbbell) | _resolve at execution_ | |
 | Split Squat (Dumbbell) | `20C1A3CB` | |
 | Standing Calf Raise | `06745E58` | |
 | Standing Calf Raise (Dumbbell) | `6DA40660` | |
@@ -118,7 +122,7 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Triceps Rope Pushdown | `94B7239B` | |
 | Triceps Rope Pushdown (BUR) | `b1e50859-2ce0-4d97-9d17-3a25ac3677cb` | yes |
 
-> Two IDs are placeholders (`Incline Curl (Dumbbell)`, `Nordic Hamstring Curl`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
+> Five IDs are placeholders (`Incline Curl (Dumbbell)`, `Landmine Squat`, `Lateral Raise (Cable)`, `Nordic Hamstring Curl`, `Spider Curl (Dumbbell)`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
 
 ---
 
