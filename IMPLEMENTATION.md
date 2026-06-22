@@ -39,7 +39,8 @@ Hevy's API doesn't support routine `DELETE`. These were renamed with the `[ARCHI
 | [ARCHIVE] Full Body 1 | `e92037d2-b707-49cc-8c5b-4250fc0f1b3d` |
 | [ARCHIVE] Full Body 2 | `ac9a87f6-7f53-4411-955c-4647a7c7e46b` |
 | [ARCHIVE] Full Body 3 | `ec055913-9697-4495-a05d-c6270c8c4ad4` |
-| [ARCHIVE] Body weight | `80bf3897-8953-4e01-b96c-948f7a8f4055` |
+
+> **Body weight** (`80bf3897-…`) is kept by the trainee's choice — not archived.
 
 ### Custom exercise templates to delete manually
 `DELETE /v1/exercise_templates/{id}` does not exist. Delete these in-app (Profile → Exercises → swipe/delete). No active routine references them after the rewrite.
