@@ -58,6 +58,21 @@ Variant A: heavier compound baseline (lower reps, longer rest). Variant B: varie
 3. When all sets hit the **top**: next session **add 2.5 kg** (BB) / **5 lb** (DB), reset to bottom.
 4. Stop at **RIR 1–2**. Don't grind to failure on compounds.
 
+### Rest periods — why each number
+
+Rest scales with how heavy the set is and how much it taxes you systemically. Heavier, multi-joint, lower-rep work needs more recovery to preserve reps on the next set; small isolation work needs little.
+
+| Rest | Applied to | Rationale |
+|---|---|---|
+| **150 s** | Heavy/moderate barbell compounds (bench, OHP, RDL, trap bar, incline, hip thrust, 4–8 rep openers) | Near-heavy loads tax ATP/CP stores and the CNS. Full-ish recovery keeps reps and bar speed up — under-resting here just bleeds reps off later sets. (Capped at 150s; 180s felt too long.) |
+| **120 s** | Accessory compounds (pulldowns, rows, leg press, split/belt squat at ~10–12 reps) | Multi-joint but lighter/higher-rep — ~2 min restores enough to hit the target. |
+| **90 s** | Larger isolations, leg curls, calves | Single-joint, smaller fatigue cost. |
+| **60–75 s** | Small isolations (lateral raises, curls, pushdowns, rear delts, abs) | Tiny muscles, low systemic cost. Short rest keeps density and pump up without hurting the next set. |
+
+**Evidence:** the old "short rest for hypertrophy" idea was overturned — Schoenfeld 2016 found ~3 min rest on compounds grew *more* muscle than 1 min, because total volume-load held up better. So: rest long enough on the big lifts to keep reps, rest short on isolation where fatigue is local. B variants use the shorter end of each tier (lighter loads, more density).
+
+**These are starting points, not laws.** If you're fully recovered before the timer, go — RIR and bar speed matter more than the clock. To shorten a session, trim compound rest first, or superset antagonists (curl while resting from a triceps move) to cut total time without cutting per-muscle rest.
+
 ### Deload
 Every 5–7 weeks, or when 2+ exercises stall for 2 consecutive sessions: one light week. Top-set weight × 0.6. 2 sets instead of 3. Same rep target. Smooth bar speed.
 
