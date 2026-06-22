@@ -55,7 +55,7 @@ Variant A: heavier compound baseline (lower reps, longer rest). Variant B: varie
 ### Double progression
 1. Start at the **bottom** of the rep range with a weight finishable at all sets at RIR 2.
 2. Add 1 rep per set when possible each session.
-3. When all sets hit the **top**: next session **add 2.5 kg** (BB) / **5 lb** (DB), reset to bottom.
+3. When all sets hit the **top**: next session **add 5 lb** (or the smallest plate/microplate jump you have), reset to bottom.
 4. Stop at **RIR 1–2**. Don't grind to failure on compounds.
 
 ### Rest periods — why each number
