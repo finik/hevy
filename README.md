@@ -73,7 +73,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 
 | # | Slot | Home A | Home B | BUR A | BUR B |
 |---|---|---|---|---|---|
-| 1 | Horizontal press | Bench Press (BB) — 4×6–8 · 180s | Swiss Bench Press — 4×8–10 · 150s | Bench Press (BB) — 4×6–8 · 180s | Bench Press (DB) — 4×8–10 · 150s |
+| 1 | Horizontal press | Bench Press (BB) — 4×6–8 · 150s | Swiss Bench Press — 4×8–10 · 150s | Bench Press (BB) — 4×6–8 · 150s | Bench Press (DB) — 4×8–10 · 150s |
 | 2 | Hip hinge | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s |
 | 3 | Vertical pull (wide) | Lat Pulldown (Cable) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s | Lat Pulldown (Cable) (BUR) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s |
 | 4 | Quad single-leg | Bulgarian Split Squat — 3×8–10/side · 120s | Belt Squat — 3×10–12 · 120s | Bulgarian Split Squat — 3×8–10/side · 120s | Split Squat (DB) — 3×10–12 · 120s |
@@ -82,13 +82,13 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 | 7 | Biceps (stretched) | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s |
 | 8 | Calves (heavy) | Standing Calf Raise (DB) — 3×6–10 · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s |
 | 9 | Abs | Hanging Knee Raise — 3×10–15 · 60s | Ab Wheel — 3×8–12 · 60s | Hanging Knee Raise — 3×10–15 · 60s | Ab Wheel — 3×8–12 · 60s |
-| — | **Est. time** | **~78 min** | **~72 min** | **~78 min** | **~72 min** |
+| — | **Est. time** | **~76 min** | **~72 min** | **~76 min** | **~72 min** |
 
 ### Day 2 — OHP + Quad + Horizontal Pull
 
 | # | Slot | Home A | Home B | BUR A | BUR B |
 |---|---|---|---|---|---|
-| 1 | Vertical press | Overhead Press (BB) — 4×6–8 · 180s | Shoulder Press (DB) — 4×8–10 · 150s | Overhead Press (BB) — 4×6–8 · 180s | Arnold Press (DB) — 4×8–10 · 150s |
+| 1 | Vertical press | Overhead Press (BB) — 4×6–8 · 150s | Shoulder Press (DB) — 4×8–10 · 150s | Overhead Press (BB) — 4×6–8 · 150s | Arnold Press (DB) — 4×8–10 · 150s |
 | 2 | Horizontal pull | Seated Cable Row — V Grip — 3×10–12 · 120s | Seated Cable Row — Bar Wide — 3×10–12 · 120s | Seated Cable Row — V Grip — 3×10–12 · 120s | Seated Cable Row — Bar Wide — 3×10–12 · 120s |
 | 3 | Incline press | Incline Bench Press (BB) — 3×8–10 · 150s | Swiss Bar Incline — 3×10–12 · 120s | Incline Bench Press (BB) — 3×8–10 · 150s | Incline Bench Press (DB) — 3×10–12 · 120s |
 | 4 | Quad | Belt Squat — 4×10–12 · 120s | Leg Extension (Home) — 4×12–15 · 90s | Leg Press (Machine) (BUR) — 4×10–12 · 120s | Trap Bar Deadlift — 4×8–10 · 150s |
@@ -97,7 +97,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 | 7 | Biceps (mid-range) | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s |
 | 8 | Triceps (lengthened on A) | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s |
 | 9 | Calves (high-rep) | Standing Calf Raise (DB) — 3×12–15 · 90s | Single Leg Standing Calf Raise (DB) — 3×12–15/side · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s |
-| — | **Est. time** | **~82 min** | **~75 min** | **~82 min** | **~80 min** |
+| — | **Est. time** | **~80 min** | **~75 min** | **~80 min** | **~80 min** |
 
 ### Day 3 — Posterior + Pull + Arms
 
