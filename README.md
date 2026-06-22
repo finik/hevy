@@ -67,6 +67,8 @@ Every 5–7 weeks, or when 2+ exercises stall for 2 consecutive sessions: one li
 
 Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION.md §2](./IMPLEMENTATION.md#2-exercise-template-id-lookup).
 
+The **Est. time** row is moving time per variant — assumes ~40 s per working set, rest as programmed, plus a warm-up allowance for the heavy barbell openers. Phone/chatting adds to it.
+
 ### Day 1 — Press + Hinge + Vertical Pull
 
 | # | Slot | Home A | Home B | BUR A | BUR B |
@@ -80,6 +82,7 @@ Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION
 | 7 | Biceps (stretched) | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s |
 | 8 | Calves (heavy) | Standing Calf Raise (DB) — 3×6–10 · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s |
 | 9 | Abs | Hanging Knee Raise — 3×10–15 · 60s | Ab Wheel — 3×8–12 · 60s | Hanging Knee Raise — 3×10–15 · 60s | Ab Wheel — 3×8–12 · 60s |
+| — | **Est. time** | **~78 min** | **~72 min** | **~78 min** | **~72 min** |
 
 ### Day 2 — OHP + Quad + Horizontal Pull
 
@@ -94,6 +97,7 @@ Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION
 | 7 | Biceps (mid-range) | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s | Spider Curl (DB) — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s |
 | 8 | Triceps (lengthened on A) | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s |
 | 9 | Calves (high-rep) | Standing Calf Raise (DB) — 3×12–15 · 90s | Single Leg Standing Calf Raise (DB) — 3×12–15/side · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s |
+| — | **Est. time** | **~82 min** | **~75 min** | **~82 min** | **~80 min** |
 
 ### Day 3 — Posterior + Pull + Arms
 
@@ -108,6 +112,7 @@ Each cell: exercise — sets×reps · rest. Hevy template IDs in [IMPLEMENTATION
 | 7 | Triceps (lateral/medial on A) | Triceps Rope Pushdown — 3×10–12 · 75s | Skullcrusher (BB) — Swiss — 3×10–12 · 90s | Triceps Rope Pushdown (BUR) — 3×10–12 · 75s | Skullcrusher (BB) — 3×10–12 · 90s |
 | 8 | Calves | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s |
 | 9 | Abs | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s |
+| — | **Est. time** | **~66 min** | **~62 min** | **~66 min** | **~62 min** |
 
 ---
 
