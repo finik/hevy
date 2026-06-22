@@ -110,7 +110,6 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Split Squat (Dumbbell) | `20C1A3CB` | |
 | Standing Calf Raise | `06745E58` | |
 | Standing Calf Raise (Dumbbell) | `6DA40660` | |
-| Standing Leg Curls | `6120CAAB` | |
 | Straight Arm Lat Pulldown (Cable) | `D2387AB1` | |
 | Swiss Bar Incline | `5f7bbdab-4cc9-4389-bfac-f32d30efac6d` | yes |
 | Swiss Bench Press | `8b6558c7-d41b-4a26-afdb-6bb285f31df6` | yes |

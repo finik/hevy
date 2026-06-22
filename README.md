@@ -37,7 +37,7 @@ Primary + 0.5×secondary.
 | Calves | 9 | Heavy 6–10 D1 (3) + High-rep 12–15 D2 (3) + D3 (3) |
 | Abs | 6 | Knee Raise D1 (3) + Cable Crunch / Hanging Leg Raise D3 (3) |
 
-> **Hamstring honesty:** the 9 total is **6 genuine knee-flexion** (the half that RDLs miss) + **3 hinge** (RDL). RDL is *not* double-counted as knee-flexion. Home does knee-flexion on the IronMaster leg-curl attachment (Lying / Standing Leg Curl). BUR has no leg-curl machine, so both BUR knee-flexion slots are a **cable hamstring curl** (ankle strap on the stack); if no strap is available, fall back to lying DB / floor curls.
+> **Hamstring honesty:** the 9 total is **6 genuine knee-flexion** (the half that RDLs miss) + **3 hinge** (RDL). RDL is *not* double-counted as knee-flexion. Home does knee-flexion on the IronMaster leg-curl attachment (Lying Leg Curl — same attachment that does the leg extensions). BUR has no leg-curl machine, so both BUR knee-flexion slots are a **cable hamstring curl** (ankle strap on the stack); if no strap is available, fall back to lying DB / floor curls.
 
 ---
 
@@ -92,7 +92,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 | 2 | Hip hinge | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s |
 | 3 | Vertical pull (wide) | Lat Pulldown (Cable) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s | Lat Pulldown (Cable) (BUR) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s |
 | 4 | Quad single-leg | Bulgarian Split Squat — 3×8–10/side · 120s | Belt Squat — 3×10–12 · 120s | Bulgarian Split Squat — 3×8–10/side · 120s | Split Squat (DB) — 3×10–12 · 120s |
-| 5 | Hamstrings (knee flexion) | Lying Leg Curl (Home) — 3×10–12 · 90s | Standing Leg Curls — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s |
+| 5 | Hamstrings (knee flexion) | Lying Leg Curl (Home) — 3×10–12 · 90s | Lying Leg Curl (Home) — 3×12–15 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s |
 | 6 | Side delts | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s |
 | 7 | Biceps (stretched) | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s |
 | 8 | Calves (heavy) | Standing Calf Raise (DB) — 3×6–10 · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s |
@@ -118,7 +118,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 
 | # | Slot | Home A | Home B | BUR A | BUR B |
 |---|---|---|---|---|---|
-| 1 | Hamstrings (priority) | Lying Leg Curl (Home) — 3×10–12 · 90s | Standing Leg Curls — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s |
+| 1 | Hamstrings (priority) | Lying Leg Curl (Home) — 3×10–12 · 90s | Lying Leg Curl (Home) — 3×12–15 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s |
 | 2 | Glute primary | Cable Pull-Through — 3×10–12 · 120s | Glute Kickback (Cable) — 3×12–15/side · 90s | Cable Pull-Through — 3×10–12 · 120s | Glute Kickback (Cable) — 3×12–15/side · 90s |
 | 3 | Vertical pull (close) | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s |
 | 4 | Horizontal pull #2 | Dumbbell Row — 3×8–10 · 120s | Dumbbell Row — 3×10–12 · 90s | Dumbbell Row — 3×8–10 · 120s | Single Arm Cable Row — 3×10–12 · 90s |
