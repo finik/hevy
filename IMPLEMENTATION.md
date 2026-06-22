@@ -78,7 +78,6 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Hanging Knee Raise | `08590920` | |
 | Hanging Leg Raise | `F8356514` | |
 | Hip Thrust (Barbell) | `D57C2EC7` | |
-| Hip Thrust (Machine) | `68CE0B9B` | |
 | Incline Bench Press (Barbell) | `50DFDFAB` | |
 | Incline Bench Press (Dumbbell) | `07B38369` | |
 | Incline Curl (Dumbbell) | _resolve at execution_ | |
