@@ -1,0 +1,246 @@
+# Hevy Implementation Notes
+
+Operational reference for working with the Hevy account, the API, the MCP integration, and account-state cleanup. The training program itself lives in [README.md](./README.md) — this file exists only so that file can stay about the program.
+
+- **Last updated:** 2026-06-21
+
+---
+
+## 1. Hevy account state
+
+### Folders (preserved, IDs unchanged)
+| Title | ID |
+|---|---|
+| Home | `240862` |
+| BUR | `1975900` |
+
+### Routines
+
+| Title | ID | Folder | Status |
+|---|---|---|---|
+| Day 1A (Home) | `e90cc7ec-e5a1-4f58-9af9-5e551dd76ea8` | Home | Rewrite in place when executing |
+| Day 2A (Home) | `caf5183d-0d7e-4687-b443-dc384e9fcd6e` | Home | Rewrite in place when executing |
+| Day 3A (Home) | `1488fcbc-fcad-4b4c-8e5a-8b11510391fd` | Home | Rewrite in place when executing |
+| Day 1A (BUR) | `7dfbbfe7-5b6b-477c-9e00-d1500c1e4e67` | BUR | Rewrite in place when executing |
+| Day 2A (BUR) | `57f9617a-b2cb-4b2c-8506-2d526b0e8713` | BUR | Rewrite in place when executing |
+| Day 3A (BUR) | `5b59e036-9271-4a62-b7dc-a7c2e4af9551` | BUR | Rewrite in place when executing |
+| Day 1B (Home) | _to be filled_ | Home | Create |
+| Day 2B (Home) | _to be filled_ | Home | Create |
+| Day 3B (Home) | _to be filled_ | Home | Create |
+| Day 1B (BUR) | _to be filled_ | BUR | Create |
+| Day 2B (BUR) | _to be filled_ | BUR | Create |
+| Day 3B (BUR) | _to be filled_ | BUR | Create |
+
+### Stale routines — rename to `[ARCHIVE]`, delete in app
+Hevy's API doesn't support routine `DELETE`. Rename via `PUT /v1/routines/{id}`, then the user deletes in the app.
+
+| Title | ID |
+|---|---|
+| Full Body 1 | `e92037d2-b707-49cc-8c5b-4250fc0f1b3d` |
+| Full Body 2 | `ac9a87f6-7f53-4411-955c-4647a7c7e46b` |
+| Full Body 3 | `ec055913-9697-4495-a05d-c6270c8c4ad4` |
+| Body weight | `80bf3897-8953-4e01-b96c-948f7a8f4055` |
+
+### Custom exercise templates to delete manually
+`DELETE /v1/exercise_templates/{id}` does not exist. Delete these in-app (Profile → Exercises → swipe/delete). No active routine references them after the rewrite.
+
+| Title | ID |
+|---|---|
+| Face Pull (ELAN) | `4da56071-81b4-45b8-aea4-0452ffc2b154` |
+| Lat Pulldown (Cable) (ELAN) | `a1c560db-a282-43f1-881e-41271c873d2b` |
+| Seated Cable Row - Elan | `b672c418-efc2-4af1-8e3c-992fa2b2d6e8` |
+| Triceps Extension (Cable) (ELAN) | `86947ea3-34d3-4167-a083-06ecf463581c` |
+| Triceps Rope Pushdown (ELAN) | `b4841559-c2fb-4583-973d-ffd8a47522f7` |
+
+---
+
+## 2. Exercise template ID lookup
+
+Used by the routine tables in `README.md` §4. If a template isn't found at execution time, create it via `POST /v1/exercise_templates` (see §3 for the schema) and record the new ID here.
+
+| Title | ID | Custom? |
+|---|---|---|
+| Belt Squat (= cable squat) | `e05d4883-21c8-4e27-abe2-d727abed2715` | yes |
+| Bench Press (Barbell) | `79D0BB3A` | |
+| Bench Press (Dumbbell) | `D04AC939` | |
+| Bicep Curl (Cable) | `ADA8623C` | |
+| Bicep Curl (Dumbbell) | `37FCC2BB` | |
+| Bulgarian Split Squat | `B5D3A742` | |
+| Cable Crunch | `23A48484` | |
+| Calf Press (Machine) | `91237BDD` | |
+| Chest Fly (Dumbbell) | `12017185` | |
+| Cross Body Hammer Curl | `32C4D4A2` | |
+| Dumbbell Row | `F1E57334` | |
+| Face Pull | `BE640BA0` | |
+| Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
+| Hammer Curl (Cable) | `36E8F14E` | |
+| Hammer Curl (Dumbbell) | `7E3BC8B6` | |
+| Hanging Knee Raise | `08590920` | |
+| Hanging Leg Raise | `F8356514` | |
+| Hip Thrust (Barbell) | `D57C2EC7` | |
+| Hip Thrust (Machine) | `68CE0B9B` | |
+| Incline Bench Press (Barbell) | `50DFDFAB` | |
+| Incline Bench Press (Dumbbell) | `07B38369` | |
+| Incline Curl (Dumbbell) | _resolve at execution_ | |
+| Lat Pulldown (Cable) | `6A6C31A5` | |
+| Lat Pulldown (Cable) (BUR) | `36548ca5-cd4d-4c26-9c8b-58540e6b2c97` | yes |
+| Lat Pulldown – Close Grip (Cable) | `4E5257DE` | |
+| Lateral Raise (Dumbbell) | `422B08F1` | |
+| Leg Extension (Home) | `d2db4633-eda0-4a53-9eb3-4b604e7d9ad8` | yes |
+| Leg Extension (Machine) | `75A4F6C4` | |
+| Leg Press (Machine) (BUR) | `78581019-7446-44be-bda6-83feb96f5352` | yes |
+| Lying Leg Curl (Home) | `322a9e07-47b6-4eca-af22-7786a2ad9e48` | yes |
+| Nordic Hamstring Curl | _resolve at execution_ | |
+| Overhead Press (Barbell) | `7B8D84E8` | |
+| Overhead Triceps Extension (Cable) | `B5EFBF9C` | |
+| Preacher Curl (Dumbbell) | `FAB6EB2F` | |
+| Rear Delt Reverse Fly (Cable) | `C315DC2A` | |
+| Rear Delt Reverse Fly (Dumbbell) | `E5988A0A` | |
+| Reverse Grip Lat Pulldown (Cable) | `046E25A2` | |
+| Romanian Deadlift (Barbell) | `2B4B7310` | |
+| Romanian Deadlift (Dumbbell) | `72CFFAD5` | |
+| Seated Cable Row – Bar Wide Grip | `C3BCABB3` | |
+| Seated Cable Row – V Grip (Cable) | `0393F233` | |
+| Shoulder Press (Dumbbell) | `878CD1D0` | |
+| Arnold Press (Dumbbell) | `A69FF221` | |
+| Single Arm Cable Row | `D0C4A899` | |
+| Single Leg Hip Thrust (Dumbbell) | `D1CD146F` | |
+| Single Leg Standing Calf Raise (Dumbbell) | `5DA40761` | |
+| Skullcrusher (Barbell) | `875F585F` | |
+| Split Squat (Dumbbell) | `20C1A3CB` | |
+| Standing Calf Raise | `06745E58` | |
+| Standing Calf Raise (Dumbbell) | `6DA40660` | |
+| Standing Leg Curls | `6120CAAB` | |
+| Straight Arm Lat Pulldown (Cable) | `D2387AB1` | |
+| Swiss Bar Incline | `5f7bbdab-4cc9-4389-bfac-f32d30efac6d` | yes |
+| Swiss Bench Press | `8b6558c7-d41b-4a26-afdb-6bb285f31df6` | yes |
+| Triceps Pushdown | `93A552C6` | |
+| Triceps Rope Pushdown | `94B7239B` | |
+| Triceps Rope Pushdown (BUR) | `b1e50859-2ce0-4d97-9d17-3a25ac3677cb` | yes |
+
+> Two IDs are placeholders (`Incline Curl (Dumbbell)`, `Nordic Hamstring Curl`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
+
+---
+
+## 3. Hevy API
+
+Base URL: `https://api.hevyapp.com`.
+Auth header: `api-key: <HEVY_API_KEY>`.
+
+### Endpoint surface
+
+| Endpoint | Methods |
+|---|---|
+| `/v1/workouts` | GET, POST |
+| `/v1/workouts/{id}` | GET, PUT |
+| `/v1/workouts/count` | GET |
+| `/v1/routines` | GET, POST |
+| `/v1/routines/{id}` | GET, PUT |
+| `/v1/routine_folders` | GET, POST |
+| `/v1/exercise_templates` | GET, POST |
+| `/v1/exercise_templates/{id}` | GET only |
+
+**No DELETE anywhere in the public API.** Workarounds:
+- Routines → rename with `[ARCHIVE]` prefix, then delete in-app.
+- Exercise templates → no rename trick (won't free the slot from routines that reference them); delete in-app.
+
+Trust the `Allow:` response header, not the CORS preflight. Preflight advertises `DELETE` but every endpoint 404s on it.
+
+### Pagination
+- Default `pageSize = 10`.
+- 429 workouts = 43 pages = 43 round-trips for a full backfill.
+- Loop: `for p in 1..page_count: GET /v1/workouts?page=$p&pageSize=10`.
+
+### Routine update payload
+```
+PUT /v1/routines/{id}
+{
+  "routine": {
+    "title": "Day 1A (Home)",
+    "folder_id": 240862,
+    "notes": "...",
+    "exercises": [
+      {
+        "exercise_template_id": "79D0BB3A",
+        "sets": [
+          { "type": "normal", "weight_kg": null, "reps": null, "rest_seconds": 180 },
+          ...
+        ]
+      },
+      ...
+    ]
+  }
+}
+```
+
+### Exercise template create payload
+```
+POST /v1/exercise_templates
+{
+  "exercise": {
+    "title": "Incline Curl (Dumbbell)",
+    "muscle_group": "biceps",
+    "exercise_type": "weight_reps",
+    "equipment_category": "dumbbell"
+  }
+}
+```
+
+Allowed enums (`muscle_group`, `exercise_type`, `equipment_category`) are returned in the 400 Zod error if you POST `{}`.
+
+### Set types
+Valid `type` values: `normal`, `warmup`, `failure`, `dropset`. All working sets use `normal`.
+
+---
+
+## 4. MCP setup (chrisdoc/hevy-mcp on MiniM1)
+
+- npm: `hevy-mcp`
+- Transport: stdio
+- Node requirement: **≥ 26** (installed v26.3.1 via nvm on 2026-06-20)
+- Hevy requirement: **Pro** subscription + API key from hevy.com/settings?developer
+
+### Registration
+```
+claude mcp add-json -s user hevy '{"type":"stdio","command":"npx","args":["-y","hevy-mcp"]}'
+```
+
+(Avoid `claude mcp add ... -e KEY=val` — known bug.)
+
+### Env strategy
+- **No env block in the MCP config.** The subprocess inherits `HEVY_API_KEY` from the Claude Code parent process at launch.
+- `HEVY_API_KEY` must be exported in the shell **before** Claude Code launches for the MCP to connect.
+- If `claude mcp list` shows hevy ✘ Failed to connect, the env isn't being inherited → export the key and relaunch Claude Code.
+- MCP changes do not take effect mid-session; Claude Code must restart to pick up newly-registered servers.
+
+### Key-handling rules
+- Do not commit `HEVY_API_KEY` to any chezmoi-tracked dotfile.
+- Do not embed in the MCP `env:` config block (file persistence; hard to rotate).
+- Export in the current shell when needed; rotate periodically via Hevy settings.
+
+---
+
+## 5. How to use this repo in future sessions
+
+1. Read `README.md` first — design and program state.
+2. This file for any Hevy mechanics: account state, IDs, API, MCP.
+3. Updating routines: IDs in §1 are stable; `PUT /v1/routines/{id}`.
+4. Creating templates: `POST /v1/exercise_templates` (schema in §3).
+5. After any routine change, update `README.md` §4 AND this file's §1.
+6. Fresh workout history pull: paginate `/v1/workouts?page=N&pageSize=10` until `page == page_count`.
+
+---
+
+## 6. Open Brain cross-reference
+
+After execution, capture three notes to Open Brain:
+- Routine design + reasoning (including the v1/v2 adversarial review synthesis)
+- Key analysis findings (volume targets, imbalances, lean-mass context)
+- Hevy MCP wired into Claude Code on MiniM1
+
+---
+
+## 7. Change log
+
+- **2026-06-21** — Split from `README.md` so the README stays about the program. Added `Incline Curl (Dumbbell)` and `Nordic Hamstring Curl` as placeholder template IDs for execution-time resolution.
+- **2026-06-20** — Initial: API surface, MCP setup, account state, template lookup.

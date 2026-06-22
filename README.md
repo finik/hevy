@@ -1,11 +1,13 @@
 # Hevy Training Plan — Source of Truth
 
-Living document for Dmitry's training program. Captures the design, the actual routines in Hevy, the adversarial review that shaped them, and the operational notes a future iteration needs. Update this file alongside any Hevy change.
+Living document for Dmitry's training program. The program, the analysis behind it, and the adversarial reviews that shaped it.
+
+Operational notes (Hevy account state, API surface, MCP setup, template ID lookup) live in [IMPLEMENTATION.md](./IMPLEMENTATION.md).
 
 - **Owner:** Dmitry (Hevy account)
 - **First built:** 2026-06-20
+- **Current version:** v3 (post second adversarial review)
 - **Last updated:** 2026-06-21
-- **Hevy MCP host:** MiniM1 (Claude Code, stdio transport, `chrisdoc/hevy-mcp`)
 
 ---
 
@@ -35,7 +37,7 @@ Living document for Dmitry's training program. Captures the design, the actual r
 - Cable stack / functional trainer
 - **Incline leg press**
 - Full dumbbell rack going past 75 lb
-- **No hamstring curl machine** — hamstring work via RDL / Single-Leg RDL / banded curl
+- **No hamstring curl machine** — hamstring work via RDL + Nordic
 
 ### Training frequency
 - **3 sessions / week.** No fixed schedule. Home or BUR chosen ad hoc per day.
@@ -47,27 +49,28 @@ Living document for Dmitry's training program. Captures the design, the actual r
 
 ### Volume per muscle — current intent (sets/wk, primary + 0.5×secondary)
 
-| Muscle | Sets/wk target | Source movements |
-|---|---|---|
-| Chest | **10** | Bench D1 + Incline D2 + Fly carryover |
-| Lats | **9** | Pulldown D1 (wide) + Pulldown D3 (close) + DB Row |
-| Upper back | **9** | Seated Row D2 + DB Row D3 + Rear delt fly |
-| Side delts | **12** (after adversarial review) | Lat raise D1 + D2 + D3 |
-| Quads | **9** (after adversarial review) | Belt squat + Leg ext/press + BSS |
-| Hamstrings | **9** (after adversarial review) | RDL + Leg curl + Nordic/banded |
-| Glutes | **9** | RDL + Hip Thrust + BSS |
-| Biceps | 6+ direct + pull carryover | Preacher/Cable curl D3 |
-| Triceps | **9 effective** | Pushdown D2 + Overhead D3 + press carryover |
-| Calves | 6, mixed heavy/high-rep | D1 + D2 |
-| Abs | 6 | Knee Raise D1 + Cable Crunch D3 |
+| Muscle | v1 | v2 | **v3** | Notes |
+|---|---|---|---|---|
+| Chest | 10 | 10 | **10** | Bench D1 + Incline D2 + Fly carryover |
+| Lats | 9 | 9 | **9** | Pulldown wide D1 + Pulldown close D3 + DB Row |
+| Upper back | 9 | 9 | **9** | Seated Row D2 + DB Row D3 + Rear Delt Fly |
+| Side delts | 6 | 11 | **8** | Lat Raise D1 (4) + D2 (4). D3 hit cut per v2 review. |
+| Quads | 6 | 9 | **9** | Belt Squat + Leg Ext/Press + BSS |
+| Hamstrings | 6 | 9 | **6 direct** | RDL D1 (3 hinge) + Leg Curl/Nordic D3 (3 knee-flex); honest count after v2 audit |
+| Glutes | 9 | 9 | **9** | RDL + Hip Thrust + BSS |
+| Biceps | 3 | 3 | **6** | Incline Curl D1 (3) + Preacher/Cable D3 (3) — v3 addition |
+| Triceps | 9 effective | 9 effective | **9 effective** | Pushdown D2/D3 + Overhead D2 + Skullcrusher D3B + press carryover |
+| Calves | 6 | 6 | **6** | Heavy D1 (3×6–10) + High-rep D2 (3×12–15) |
+| Abs | 6 | 6 | **6** | Knee Raise D1 + Cable Crunch D3 |
 
 ### Imbalances the program addresses
 
-1. **Posterior chain** — no squat or conventional deadlift. Replaced with RDL + Hip Thrust + Leg Curl. Hip-dominant + knee-flexion both covered.
+1. **Posterior chain** — no squat or conventional deadlift. Replaced with RDL + Hip Thrust + Leg Curl/Nordic. Hip-dominant + knee-flexion both covered.
 2. **No calves, no direct ab/core** — added to two days each.
 3. **No vertical pull at home** until IronMaster cable tower returned. Now wide-grip + close-grip on separate days.
 4. **No rear delt isolation** — Rear Delt Reverse Fly on Day 3.
-5. **Bicep-heavy vs tricep direct work** — rebalanced toward triceps (9 effective vs 6 direct biceps).
+5. **Bicep-heavy vs tricep direct work** — rebalanced. Biceps now also has a stretched-position hit on D1 (v3).
+6. **Long-head triceps underloaded** — D2 A-variants use Overhead Cable Ext (long head); v3 pairs with Day 3 lateral/medial work for full-spectrum.
 
 ### Progression — last 12 weeks (top-set est-1RM, Epley)
 
@@ -78,7 +81,7 @@ Living document for Dmitry's training program. Captures the design, the actual r
 Peak lifts late-2024 / early-2025 sit ~15–25% above current — consistent with documented fat-loss + lean-mass decline. Floor holding; bench rebuilding.
 
 ### Data hygiene
-- 7,257/7,407 sets logged as `type=normal`; 150 warmup. No dropsets/failure/AMRAP markers historically.
+- 7,257/7,407 sets logged as `type=normal`; 150 warmup. No dropsets / failure / AMRAP markers historically.
 - One outlier ignored: Dumbbell Row 2024-05-31, logged 2472 kg × 12 (decimal/unit typo).
 
 ---
@@ -95,84 +98,100 @@ Peak lifts late-2024 / early-2025 sit ~15–25% above current — consistent wit
 - **Variant A** — heavier compound baseline (lower reps, longer rest).
 - **Variant B** — variety with Swiss bar / DBs / cables (moderate reps, shorter rest).
 
-User trains 3×/wk, picking one variant of each day per week. Home or BUR decided ad hoc by daily schedule.
+Trains 3×/wk, one variant of each day per week. Home or BUR decided ad hoc by daily schedule.
 
-### Progression scheme
+### Double progression
 
-**Double progression.**
 1. Start at the **bottom** of the rep range with a weight finishable at all sets at RIR 2.
 2. Add 1 rep per set when possible each session.
 3. When all sets hit the **top** of the range: next session **add 2.5 kg** (BB) / **5 lb** (DB), drop back to bottom of range.
 4. Stop sets at **RIR 1–2**. Don't grind to failure on compounds.
 
+### Readiness gate (v3 — Galpin MVP)
+
+Morning, 10 seconds, before deciding the session:
+- **Subjective 1–10 score** — composite of sleep, soreness, appetite, mood, motivation.
+- **Score ≥ 5** → train as written.
+- **Score 3–4** → drop the top set on every compound (3 sets become 2; 4 sets become 3). Keep weights.
+- **Score < 3** → swap to Variant B if you had A planned (lower reps in better range, shorter rest, easier on CNS). Or skip and walk.
+
+Log the score. Drift catches stalls before they show on the bar.
+
+### Nordic Hamstring Curl — eccentric ramp-in (v3)
+
+Nordic is brutal eccentric load. New movement, no skipping the ramp.
+
+- **Weeks 1–2:** 2 sets × 3–5 reps, **eccentric-only**, 4-second lower. Concentric: drive from the floor with hands, or use a band wrapped around shoulders + rack. No unassisted descent yet.
+- **Weeks 3–4:** 2 sets × 5–8 reps, band-assisted full reps.
+- **Week 5+:** 3 sets × 5–8 reps, unassisted. Cue: lengthen the descent, no falling.
+
+If DOMS shuts down a session, dial back a phase.
+
 ### Deload protocol
 
-Every **5–7 weeks** (tighter than the textbook 6–8 because of GLP-1 recovery tail — see §5 Norton critique), or when 2+ exercises stall for 2 consecutive sessions:
-
-- **One light week.**
-- Top-set weight × **0.6**.
-- **2 sets** per exercise instead of 3.
-- Same rep target, smooth bar speed.
-- Resume normal loads next week.
+Every **5–7 weeks** (GLP-1 recovery tail), or when 2+ exercises stall for 2 consecutive sessions:
+- **One light week.** Top-set weight × **0.6**. **2 sets** per exercise instead of 3. Same rep target. Smooth bar speed. Resume normal loads next week.
 
 ---
 
 ## 4. The 12 routines
 
-Each day = one table. Columns: **Slot · S×R (A / B) · Rest (A / B) · Home A · Home B · BUR A · BUR B**. Exercise + Hevy `exercise_template_id` shown inline. When A and B share the same prescription, the cell collapses. See §6 for the master template ID lookup.
+One table per day. Four exercise columns: **Home A · Home B · BUR A · BUR B**. Each cell: exercise name — sets×reps · rest.
+
+Hevy template IDs are in [IMPLEMENTATION.md §2](./IMPLEMENTATION.md#2-exercise-template-id-lookup).
 
 ### Day 1 — Press + Hinge + Vertical Pull
 
-| # | Slot | S×R (A / B) | Rest (A / B) | Home A | Home B | BUR A | BUR B |
-|---|---|---|---|---|---|---|---|
-| 1 | Horizontal press | 4×6–8 / 4×8–10 | 180 / 150 | Bench Press (BB) `79D0BB3A` | Swiss Bench Press `8b6558c7` | Bench Press (BB) `79D0BB3A` | Bench Press (DB) `D04AC939` |
-| 2 | Hip hinge | 3×8–10 / 3×10–12 | 150 / 120 | Romanian Deadlift (BB) `2B4B7310` | Romanian Deadlift (DB) `72CFFAD5` | Romanian Deadlift (BB) `2B4B7310` | Romanian Deadlift (DB) `72CFFAD5` |
-| 3 | Vertical pull (wide) | 3×8–10 / 3×10–12 | 120 / 120 | Lat Pulldown (Cable) `6A6C31A5` | Reverse Grip Lat Pulldown `046E25A2` | Lat Pulldown (Cable) (BUR) `36548ca5` | Reverse Grip Lat Pulldown `046E25A2` |
-| 4 | Quad single-leg | 3×8–10/side / 3×10–12 | 120 / 120 | Bulgarian Split Squat `B5D3A742` | Belt Squat `e05d4883` | Bulgarian Split Squat `B5D3A742` | Split Squat (DB) `20C1A3CB` |
-| 5 | Side delts | 4×12–15 | 75 / 60 | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` |
-| 6 | Calves (heavy) | 3×6–10 | 90 | Standing Calf Raise (DB) `6DA40660` | Single Leg Standing Calf Raise (DB) `5DA40761` | Calf Press (Machine) `91237BDD` | Calf Press (Machine) `91237BDD` |
-| 7 | Abs | 3×10–15 / 3×8–12 | 60 | Hanging Knee Raise `08590920` | Ab Wheel `99D5F10E` | Hanging Knee Raise `08590920` | Ab Wheel `99D5F10E` |
+| # | Slot | Home A | Home B | BUR A | BUR B |
+|---|---|---|---|---|---|
+| 1 | Horizontal press | Bench Press (BB) — 4×6–8 · 180s | Swiss Bench Press — 4×8–10 · 150s | Bench Press (BB) — 4×6–8 · 180s | Bench Press (DB) — 4×8–10 · 150s |
+| 2 | Hip hinge | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s | Romanian Deadlift (BB) — 3×8–10 · 150s | Romanian Deadlift (DB) — 3×10–12 · 120s |
+| 3 | Vertical pull (wide) | Lat Pulldown (Cable) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s | Lat Pulldown (Cable) (BUR) — 3×8–10 · 120s | Reverse Grip Lat Pulldown — 3×10–12 · 120s |
+| 4 | Quad single-leg | Bulgarian Split Squat — 3×8–10/side · 120s | Belt Squat — 3×10–12 · 120s | Bulgarian Split Squat — 3×8–10/side · 120s | Split Squat (DB) — 3×10–12 · 120s |
+| 5 | Side delts | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s |
+| 6 | Biceps (stretched) | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s | Incline Curl (DB) — 3×10–12 · 60s | Hammer Curl (DB) — 3×10–12 · 60s |
+| 7 | Calves (heavy) | Standing Calf Raise (DB) — 3×6–10 · 90s | Single Leg Standing Calf Raise (DB) — 3×6–10/side · 90s | Calf Press (Machine) — 3×6–10 · 90s | Calf Press (Machine) — 3×6–10 · 90s |
+| 8 | Abs | Hanging Knee Raise — 3×10–15 · 60s | Ab Wheel — 3×8–12 · 60s | Hanging Knee Raise — 3×10–15 · 60s | Ab Wheel — 3×8–12 · 60s |
 
-> **Notes:** Side delts raised to 4 sets per session in response to convergent Israetel/Norton critique. Calves shifted to a heavy 6–10 rep range (Norton).
+> **v3 notes:** Slot 6 (Incline / Hammer Curl) is new — added per Israetel/Norton dose-response critique on biceps. Slot 7 calves shifted to a heavy 6–10 range per Norton (calves respond to load too, not just high-rep).
 
 ### Day 2 — OHP + Quad + Horizontal Pull
 
-| # | Slot | S×R (A / B) | Rest (A / B) | Home A | Home B | BUR A | BUR B |
-|---|---|---|---|---|---|---|---|
-| 1 | Vertical press | 4×6–8 / 4×8–10 | 180 / 150 | Overhead Press (BB) `7B8D84E8` | Shoulder Press (DB) `878CD1D0` | Overhead Press (BB) `7B8D84E8` | Arnold Press (DB) `A69FF221` |
-| 2 | Horizontal pull | 3×10–12 | 120 | Seated Cable Row – V Grip `0393F233` | Seated Cable Row – Bar Wide `C3BCABB3` | Seated Cable Row – V Grip `0393F233` | Seated Cable Row – Bar Wide `C3BCABB3` |
-| 3 | Incline press | 3×8–10 / 3×10–12 | 150 / 120 | Incline Bench Press (BB) `50DFDFAB` | Swiss Bar Incline `5f7bbdab` | Incline Bench Press (BB) `50DFDFAB` | Incline Bench Press (DB) `07B38369` |
-| 4a | Quad compound | 4×10–12 | 120 | Leg Extension (Home) `d2db4633` | Belt Squat `e05d4883` | Leg Press (Machine) (BUR) `78581019` | Belt Squat `e05d4883` |
-| 4b | Quad isolation | 2×12–15 (B only) | 60 | — | Leg Extension (Home) `d2db4633` | — | Leg Extension (Machine) `75A4F6C4` |
-| 5 | Side delts | 4×12–15 | 75 / 60 | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` |
-| 6 | Triceps (lengthened) | 3×10–12 | 75 | Overhead Triceps Extension (Cable) `B5EFBF9C` | Triceps Pushdown `93A552C6` | Overhead Triceps Extension (Cable) `B5EFBF9C` | Triceps Pushdown `93A552C6` |
-| 7 | Calves (high-rep) | 3×12–15 | 90 | Standing Calf Raise `06745E58` | Single Leg Standing Calf Raise (DB) `5DA40761` | Calf Press (Machine) `91237BDD` | Calf Press (Machine) `91237BDD` |
+| # | Slot | Home A | Home B | BUR A | BUR B |
+|---|---|---|---|---|---|
+| 1 | Vertical press | Overhead Press (BB) — 4×6–8 · 180s | Shoulder Press (DB) — 4×8–10 · 150s | Overhead Press (BB) — 4×6–8 · 180s | Arnold Press (DB) — 4×8–10 · 150s |
+| 2 | Horizontal pull | Seated Cable Row — V Grip — 3×10–12 · 120s | Seated Cable Row — Bar Wide Grip — 3×10–12 · 120s | Seated Cable Row — V Grip — 3×10–12 · 120s | Seated Cable Row — Bar Wide Grip — 3×10–12 · 120s |
+| 3 | Incline press | Incline Bench Press (BB) — 3×8–10 · 150s | Swiss Bar Incline — 3×10–12 · 120s | Incline Bench Press (BB) — 3×8–10 · 150s | Incline Bench Press (DB) — 3×10–12 · 120s |
+| 4a | Quad compound | Leg Extension (Home) — 4×10–12 · 120s | Belt Squat — 4×10–12 · 120s | Leg Press (Machine) (BUR) — 4×10–12 · 120s | Belt Squat — 4×10–12 · 120s |
+| 4b | Quad isolation (B only) | — | Leg Extension (Home) — 2×12–15 · 60s | — | Leg Extension (Machine) — 2×12–15 · 60s |
+| 5 | Side delts | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s | Lateral Raise (DB) — 4×12–15 · 75s | Lateral Raise (DB) — 4×12–15 · 60s |
+| 6 | Triceps (lengthened on A) | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s | Overhead Triceps Extension (Cable) — 3×10–12 · 75s | Triceps Pushdown — 3×10–12 · 75s |
+| 7 | Calves (high-rep) | Standing Calf Raise — 3×12–15 · 90s | Single Leg Standing Calf Raise (DB) — 3×12–15/side · 90s | Calf Press (Machine) — 3×12–15 · 90s | Calf Press (Machine) — 3×12–15 · 90s |
 
-> **Notes:** Quad slot expanded to compound + isolation (4 + 2 sets on B days) per Israetel/Norton — total quad direct sets rise from 6 to 9/wk. Day 2 triceps shifted to lengthened-position emphasis on A days (overhead) so the week is balanced with Day 3's pushdown/skullcrusher.
+> **v3 notes:** Slot 4 split into compound + isolation on B days (Israetel/Norton: quads at 6 sets undertrained for a no-squat program). Slot 6 A-variants are Overhead Cable Ext for long-head emphasis; pairs with Day 3 short-head/lateral work.
 
 ### Day 3 — Pull + Posterior + Arms
 
-| # | Slot | S×R (A / B) | Rest (A / B) | Home A | Home B | BUR A | BUR B |
-|---|---|---|---|---|---|---|---|
-| 1 | Vertical pull (close) | 3×8–10 / 3×10–12 | 120 / 90 | Lat Pulldown – Close Grip `4E5257DE` | Straight Arm Lat Pulldown (Cable) `D2387AB1` | Lat Pulldown – Close Grip `4E5257DE` | Straight Arm Lat Pulldown (Cable) `D2387AB1` |
-| 2 | Glute primary | 3×8–12 / 3×10–12 | 150 / 120 | Hip Thrust (BB) `D57C2EC7` | Single Leg Hip Thrust (DB) `D1CD146F` | Hip Thrust (BB) `D57C2EC7` | Hip Thrust (Machine) `68CE0B9B` |
-| 3 | Hamstrings (knee flexion) | 3×10–12 | 90 | Lying Leg Curl (Home) `322a9e07` | Standing Leg Curls `6120CAAB` | Nordic Hamstring Curl `3E81CD3D` | Nordic Hamstring Curl `3E81CD3D` |
-| 4 | Horizontal pull #2 | 3×8–10 / 3×10–12 | 120 / 90 | Dumbbell Row `F1E57334` | Dumbbell Row `F1E57334` | Dumbbell Row `F1E57334` | Single Arm Cable Row `D0C4A899` |
-| 5 | Rear delts | 4×12–15 | 60 | Rear Delt Reverse Fly (DB) `E5988A0A` | Face Pull `BE640BA0` | Rear Delt Reverse Fly (Cable) `C315DC2A` | Face Pull (BUR) `dcb574e5` |
-| 6 | Side delts (3rd hit) | 3×12–15 | 60 | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` | Lateral Raise (DB) `422B08F1` |
-| 7 | Biceps | 3×10–12 | 75 | Preacher Curl (DB) — IronMaster `FAB6EB2F` | Cross Body Hammer Curl `32C4D4A2` | Bicep Curl (Cable) `ADA8623C` | Hammer Curl (Cable) `36E8F14E` |
-| 8 | Triceps | 3×10–12 | 90 | Overhead Triceps Extension (Cable) `B5EFBF9C` | Skullcrusher (BB) — Swiss `875F585F` | Overhead Triceps Extension (Cable) `B5EFBF9C` | Skullcrusher (BB) `875F585F` |
-| 9 | Abs | 3×12–15 | 60 | Cable Crunch `23A48484` | Hanging Leg Raise `F8356514` | Cable Crunch `23A48484` | Hanging Leg Raise `F8356514` |
+| # | Slot | Home A | Home B | BUR A | BUR B |
+|---|---|---|---|---|---|
+| 1 | Vertical pull (close) | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s |
+| 2 | Glute primary | Hip Thrust (BB) — 3×8–12 · 150s | Single Leg Hip Thrust (DB) — 3×10–12/side · 120s | Hip Thrust (BB) — 3×8–12 · 150s | Hip Thrust (Machine) — 3×10–12 · 120s |
+| 3 | Hamstrings (knee flexion) | Lying Leg Curl (Home) — 3×10–12 · 90s | Standing Leg Curls — 3×10–12 · 90s | Nordic Hamstring Curl — see ramp-in §3 · 90s | Nordic Hamstring Curl — see ramp-in §3 · 90s |
+| 4 | Horizontal pull #2 | Dumbbell Row — 3×8–10 · 120s | Dumbbell Row — 3×10–12 · 90s | Dumbbell Row — 3×8–10 · 120s | Single Arm Cable Row — 3×10–12 · 90s |
+| 5 | Rear delts | Rear Delt Reverse Fly (DB) — 4×12–15 · 60s | Face Pull — 4×12–15 · 60s | Rear Delt Reverse Fly (Cable) — 4×12–15 · 60s | Face Pull (BUR) — 4×12–15 · 60s |
+| 6 | Biceps | Preacher Curl (DB) — IronMaster — 3×10–12 · 75s | Cross Body Hammer Curl — 3×10–12 · 75s | Bicep Curl (Cable) — 3×10–12 · 75s | Hammer Curl (Cable) — 3×10–12 · 75s |
+| 7 | Triceps (lateral/medial on A) | Triceps Rope Pushdown — 3×10–12 · 75s | Skullcrusher (BB) — Swiss — 3×10–12 · 90s | Triceps Rope Pushdown (BUR) — 3×10–12 · 75s | Skullcrusher (BB) — 3×10–12 · 90s |
+| 8 | Abs | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s |
 
-> **Notes:** BUR hamstring slot upgraded from Single-Leg RDL to Nordic Hamstring Curl (Norton/Israetel: dedicated knee-flexion needed, "or single-leg RDL" was an escape hatch). 3rd lat-raise hit added per Israetel volume target.
+> **v3 notes:** Day 3 lat raise cut (v2 reviewers convergent: cuff/AC joint risk + junk volume by week 3). BUR hamstring slot is Nordic, not Single-Leg RDL (forces knee-flexion bias; no escape hatch). Slot 7 A-variants flipped to Pushdown so the week balances long-head (D2A Overhead + D3B Skullcrusher) against lateral/medial (D2B + D3A Pushdown).
 
 ---
 
 ## 5. Adversarial review
 
-Four persona reviewers were spawned in parallel to critique the program before commitment. Each refreshed on the persona's current published philosophy, then delivered specific feedback. Verbatim below, followed by a synthesis of convergent themes and the changes already merged into §4.
+Each round, four persona reviewers (Mike Israetel / Layne Norton / Pavel Tsatsouline / Andy Galpin) were spawned in parallel, refreshed on the persona's current philosophy via web search, and asked to critique the program in their voice. Round 1 reviewed v1; round 2 reviewed v2 (the v1 changes already merged). Both rounds are verbatim below, each followed by a synthesis listing convergent themes and which were merged / tracked / rejected.
 
-### 5.1 Mike Israetel (Renaissance Periodization)
+### 5.1 Round 1 — Mike Israetel (Renaissance Periodization) on v1
 
 **Critiques:**
 - Side delt volume is undercooked. 6 direct sets plus "carryover" — pressing carryover to side delts is basically a rounding error; the medial deltoid barely fires on bench or OHP. For a 6-year trainee in a hypertrophy block trying to recover lean mass, side delts should be 12–20 hard sets. Three lat raise sessions of 3 sets at 12–15 with RIR 1–2 is maintenance, not growth.
@@ -190,7 +209,7 @@ Four persona reviewers were spawned in parallel to critique the program before c
 - Double progression with RIR 1–2 stop and the 6–8 week deload cadence — clean, sustainable, appropriate for a 6-year trainee on a GLP-1 maintenance.
 - Two variants per day for location flexibility is smart adherence engineering.
 
-### 5.2 Layne Norton (BioLayne)
+### 5.2 Round 1 — Layne Norton (BioLayne) on v1
 
 **Critiques:**
 - Your "10 sets chest" only hits if you count incline as chest — fine, but you've got chest 2×/week with 4 working sets on Day 1 and 3 on Day 2. Meta-analyses (Schoenfeld et al., and the more recent Baz-Valle work) suggest frequency past 2× adds little if volume is matched, but 7 hard sets is on the low end for someone 6+ years in chasing reaccrual. Same problem with side delts — 6 "direct" sets at RIR 1–2 on lat raises is maintenance volume, not growth volume, especially post-cut.
@@ -208,7 +227,7 @@ Four persona reviewers were spawned in parallel to critique the program before c
 - Double progression with RIR cues and the A/B variant structure — pragmatic, autoregulates around equipment, and the evidence on rep ranges 6–15 being roughly equivalent for hypertrophy supports the flexibility.
 - Excluding back squat/conventional DL given the knee. Smart. Belt squat and split squat work.
 
-### 5.3 Pavel Tsatsouline (StrongFirst)
+### 5.3 Round 1 — Pavel Tsatsouline (StrongFirst) on v1
 
 **Critiques:**
 - Twelve routines, two variants, a buffet of choices. Comrade, the program is the program. When you can pick, you will pick what feels good that day, never what is hard. Choice is the enemy of progress.
@@ -225,7 +244,7 @@ Four persona reviewers were spawned in parallel to critique the program before c
 **Keep:**
 - Double progression with RIR 1–2 stop and the 6–8 week deload. Honest, conservative, sustainable. This is the spine of the plan — do not break it.
 
-### 5.4 Andy Galpin (performance scientist)
+### 5.4 Round 1 — Andy Galpin (performance scientist) on v1
 
 **Critiques:**
 - You're rebuilding lean mass after a GLP-1 cut with a ~10.5 lb LBM deficit, but total weekly hard sets per muscle sit at the floor of what the 2024-25 literature considers hypertrophic — chest 10, quads 6 direct, hams 6, biceps 6. For a 6+ year trainee in a recovery phase with elevated protein synthesis sensitivity post-cut, that's leaving meat on the bone. Quads at 6 direct sets is the standout deficit given you lost LBM and your knee restricts the heavy bilateral driver.
@@ -242,193 +261,129 @@ Four persona reviewers were spawned in parallel to critique the program before c
 - Variant A/B structure — it's intelligent equipment-aware programming for an ad hoc schedule.
 - Double progression with a 6–8 week deload cadence is appropriate for your training age.
 
-### 5.5 Synthesis — convergent themes & what we changed
+### 5.5 Round 1 synthesis (→ v2)
 
 | Theme | Israetel | Norton | Tsatsouline | Galpin | Action |
 |---|---|---|---|---|---|
-| Side delts undercooked (need 12+ sets/wk) | ✓ | ✓ | — | — | **Merged.** Lat raises → 4 sets D1, 4 sets D2, 3 sets D3 = 11 hard sets/wk. |
-| Quad direct work too low (need 9+) | ✓ | ✓ | (separate critique) | ✓ | **Merged.** Day 2 quad slot split into compound (4×10–12) + isolation (2×12–15 on B days). |
-| Hamstring stimulus poor, "or single-leg RDL" is an escape hatch | ✓ | ✓ | — | ✓ | **Merged.** BUR hamstring slot upgraded from Single-Leg RDL → Nordic Hamstring Curl. |
-| Long-head triceps underloaded | ✓ | — | — | — | **Merged.** Day 2 triceps slot A-variants now Overhead Cable Extension; pushdown on B-variants. |
-| Calves need heavy range too | — | ✓ | — | — | **Merged.** Day 1 calves now 3×6–10 heavy; Day 2 stays 3×12–15. |
-| GLP-1 recovery tail → tighter deload | — | ✓ | — | (overlap: readiness) | **Merged.** Deload cadence narrowed to 5–7 weeks. |
-| Autoregulation / readiness check | — | (RPE check) | — | ✓ | **Not merged.** Future addition — log morning 1–10 readiness, drop a set when red. Tracked as open item. |
-| Add Zone 2 4th session | — | — | — | ✓ | **Not merged.** Trainee constraint = 3 sessions/wk; flagged for future consideration. |
-| Collapse choice / fewer variants | — | — | ✓ | — | **Rejected.** A/B variants are deliberate adherence engineering for ad-hoc Home/BUR scheduling — Israetel, Norton, Galpin all endorsed this. |
-| Heavy strength ramps (singles/doubles) before hypertrophy work | — | — | ✓ | — | **Rejected.** Phase goal is hypertrophy + LBM reaccrual, not max strength. Worth revisiting in a future strength block. |
-
-**Net result:** 6 changes accepted (side delts +2 hits, quad isolation slot, BUR hams → Nordic, long-head triceps, heavy calf range, tighter deload). 2 open items tracked (readiness log, Zone 2). 2 rejections (collapse variants, heavy strength ramps) with explicit reasoning.
+| Side delts undercooked (need 12+) | ✓ | ✓ | — | — | **Merged.** D3 lat raise added; 6 → 11 sets/wk. (Reversed in v3 — see §5.10.) |
+| Quad direct work too low (need 9+) | ✓ | ✓ | (separate critique) | ✓ | **Merged.** D2B split into compound + isolation. |
+| Hamstring stimulus poor, "or single-leg RDL" is an escape hatch | ✓ | ✓ | — | ✓ | **Merged.** BUR ham slot → Nordic Hamstring Curl. |
+| Long-head triceps underloaded | ✓ | — | — | — | **Merged.** D2 A-variants → Overhead Cable Ext. |
+| Calves need a heavy range | — | ✓ | — | — | **Merged.** D1 calves → 3×6–10. |
+| Tighter deload on GLP-1 | — | ✓ | — | (overlap) | **Merged.** 6–8 → 5–7 weeks. |
+| Autoregulation / readiness check | — | (RPE check) | — | ✓ | **Open** (round 2 will merge — see §5.10). |
+| Add Zone 2 4th session | — | — | — | ✓ | **Open.** Trainee constraint = 3 sessions/wk. |
+| Collapse choice / fewer variants | — | — | ✓ | — | **Rejected.** A/B variants are deliberate adherence engineering — 3 of 4 endorsed. |
+| Heavy strength ramps (singles/doubles) | — | — | ✓ | — | **Rejected.** Phase goal is hypertrophy + LBM reaccrual, not max strength. Future strength block. |
 
 ---
 
-## 6. Master template ID reference
+### 5.6 Round 2 — Mike Israetel on v2
 
-| Title | ID | Custom? |
-|---|---|---|
-| Belt Squat (= cable squat) | `e05d4883-21c8-4e27-abe2-d727abed2715` | yes |
-| Bench Press (Barbell) | `79D0BB3A` | |
-| Bench Press (Dumbbell) | `D04AC939` | |
-| Bicep Curl (Cable) | `ADA8623C` | |
-| Bicep Curl (Dumbbell) | `37FCC2BB` | |
-| Bulgarian Split Squat | `B5D3A742` | |
-| Cable Crunch | `23A48484` | |
-| Calf Press (Machine) | `91237BDD` | |
-| Chest Fly (Dumbbell) | `12017185` | |
-| Cross Body Hammer Curl | `32C4D4A2` | |
-| Dumbbell Row | `F1E57334` | |
-| Face Pull | `BE640BA0` | |
-| Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
-| Hammer Curl (Cable) | `36E8F14E` | |
-| Hammer Curl (Dumbbell) | `7E3BC8B6` | |
-| Hanging Knee Raise | `08590920` | |
-| Hanging Leg Raise | `F8356514` | |
-| Hip Thrust (Barbell) | `D57C2EC7` | |
-| Hip Thrust (Machine) | `68CE0B9B` | |
-| Incline Bench Press (Barbell) | `50DFDFAB` | |
-| Incline Bench Press (Dumbbell) | `07B38369` | |
-| Lat Pulldown (Cable) | `6A6C31A5` | |
-| Lat Pulldown (Cable) (BUR) | `36548ca5-cd4d-4c26-9c8b-58540e6b2c97` | yes |
-| Lat Pulldown – Close Grip (Cable) | `4E5257DE` | |
-| Lateral Raise (Dumbbell) | `422B08F1` | |
-| Leg Extension (Home) | `d2db4633-eda0-4a53-9eb3-4b604e7d9ad8` | yes |
-| Leg Extension (Machine) | `75A4F6C4` | |
-| Leg Press (Machine) (BUR) | `78581019-7446-44be-bda6-83feb96f5352` | yes |
-| Lying Leg Curl (Home) | `322a9e07-47b6-4eca-af22-7786a2ad9e48` | yes |
-| Nordic Hamstring Curl | `3E81CD3D` | |
-| Overhead Press (Barbell) | `7B8D84E8` | |
-| Overhead Triceps Extension (Cable) | `B5EFBF9C` | |
-| Preacher Curl (Dumbbell) | `FAB6EB2F` | |
-| Rear Delt Reverse Fly (Cable) | `C315DC2A` | |
-| Rear Delt Reverse Fly (Dumbbell) | `E5988A0A` | |
-| Reverse Grip Lat Pulldown (Cable) | `046E25A2` | |
-| Romanian Deadlift (Barbell) | `2B4B7310` | |
-| Romanian Deadlift (Dumbbell) | `72CFFAD5` | |
-| Seated Cable Row – Bar Wide Grip | `C3BCABB3` | |
-| Seated Cable Row – V Grip (Cable) | `0393F233` | |
-| Shoulder Press (Dumbbell) | `878CD1D0` | |
-| Arnold Press (Dumbbell) | `A69FF221` | |
-| Single Arm Cable Row | `D0C4A899` | |
-| Single Leg Hip Thrust (Dumbbell) | `D1CD146F` | |
-| Single Leg Standing Calf Raise (Dumbbell) | `5DA40761` | |
-| Skullcrusher (Barbell) | `875F585F` | |
-| Split Squat (Dumbbell) | `20C1A3CB` | |
-| Standing Calf Raise | `06745E58` | |
-| Standing Calf Raise (Dumbbell) | `6DA40660` | |
-| Standing Leg Curls | `6120CAAB` | |
-| Straight Arm Lat Pulldown (Cable) | `D2387AB1` | |
-| Swiss Bar Incline | `5f7bbdab-4cc9-4389-bfac-f32d30efac6d` | yes |
-| Swiss Bench Press | `8b6558c7-d41b-4a26-afdb-6bb285f31df6` | yes |
-| Triceps Pushdown | `93A552C6` | |
-| Triceps Rope Pushdown | `94B7239B` | |
-| Triceps Rope Pushdown (BUR) | `b1e50859-2ce0-4d97-9d17-3a25ac3677cb` | yes |
+**Residual critiques:**
+- Biceps at 6+ is still the runt of the litter. You raised delts and quads but left elbow flexors at MV when the trainee has 10.5 lb LBM to reaccrue — arms grow during reaccrual cheaply, you're leaving free tissue on the table. Push to 8–10.
+- Hamstring volume reads 9 but knee-flexion vs hip-hinge split is muddy. Nordic + leg curl + RDL/hip thrust means hip-dominant is probably double-counted. Audit by function, not slot.
+- Calves at 6 sets is still MV-adjacent for a 6+ yr trainee. Heavy/high-rep split is correct; the number isn't.
 
-> Nordic Hamstring Curl ID `3E81CD3D` is a placeholder — confirm against the live `/v1/exercise_templates` lookup at execution time. If not found in the stock library, create as a custom template via `POST /v1/exercise_templates`.
+**New critiques from v2:**
+- 11 sets of lateral raise across 3 consecutive sessions with zero recovery gap — medial delt is small but it's not magic. Expect the third session's raises to be junk volume by week 3. Stagger intensities or accept the last slot is a pump finisher, not a stimulus.
+- Overhead cable extension Day 2 + overhead cable extension Day 3 Var A = long head twice, lateral/medial head undertrained. Vary the shoulder angle across the week.
 
----
+**v3 suggestions:**
+- Biceps to 8 sets: add 2 sets incline DB curl to Day 1 (stretched position, fits the press day cooldown).
+- Demote Day 3 lat raise to 2 sets myo-rep or cut it; reallocate to a true lateral/medial tri movement (close-grip press or dips).
 
-## 7. Hevy account state — pending execution
+**Verdict:** Real step forward — delts, quads, and ham bias were the load-bearing fixes and you made them; v3 is fine-tuning, not rebuilding.
 
-### Folders (preserved, IDs unchanged)
-- `Home` — `240862`
-- `BUR` — `1975900`
+### 5.7 Round 2 — Layne Norton on v2
 
-### Routines
+**Residual critiques:**
+- Biceps at 6 sets is still under the dose-response curve. Schoenfeld's meta-regression shows hypertrophy scaling to ~12–20 sets for small muscles in trained lifters. You're a 6-year guy on a GLP-1 trying to recover 10.5 lb LBM — direct elbow flexion volume is the cheapest set you can buy. Bump to 9–10.
+- Still no morning HRV or bodyweight readiness gate. On a GLP-1, appetite suppression masks under-recovery. You need objective data, not vibes.
+- No RIR/RPE prescription written anywhere. "3×8–10" without proximity-to-failure is just numbers — the literature (Helms, Zourdos) is unambiguous that effort prescription drives the stimulus.
 
-| Title | ID | Folder | Action |
-|---|---|---|---|
-| Day 1A (Home) | `e90cc7ec-e5a1-4f58-9af9-5e551dd76ea8` | Home | Rewrite in place |
-| Day 2A (Home) | `caf5183d-0d7e-4687-b443-dc384e9fcd6e` | Home | Rewrite in place |
-| Day 3A (Home) | `1488fcbc-fcad-4b4c-8e5a-8b11510391fd` | Home | Rewrite in place |
-| Day 1A (BUR) | `7dfbbfe7-5b6b-477c-9e00-d1500c1e4e67` | BUR | Rewrite in place |
-| Day 2A (BUR) | `57f9617a-b2cb-4b2c-8506-2d526b0e8713` | BUR | Rewrite in place |
-| Day 3A (BUR) | `5b59e036-9271-4a62-b7dc-a7c2e4af9551` | BUR | Rewrite in place |
-| Day 1B (Home) | _to be filled by execution_ | Home | Create |
-| Day 2B (Home) | _to be filled by execution_ | Home | Create |
-| Day 3B (Home) | _to be filled by execution_ | Home | Create |
-| Day 1B (BUR) | _to be filled by execution_ | BUR | Create |
-| Day 2B (BUR) | _to be filled by execution_ | BUR | Create |
-| Day 3B (BUR) | _to be filled by execution_ | BUR | Create |
+**New critiques from v2:**
+- Day 2 Var B quads: 4×10–12 belt squat + 2×12–15 leg ext stacks 6 sets of knee-dominant work after an OHP-fatigued CNS. Watch the bad knee.
+- Nordic-only BUR hamstring is brutal eccentric load with no regression listed. Prescribe a band-assisted progression or you'll tweak something.
+- Overhead cable tri appears Day 2A AND Day 3A — that's 6 sets of long-head bias in 48 hours. Rotate one to a pronated pushdown.
 
-### Stale routines to archive (rename to `[ARCHIVE]` prefix; user deletes in app)
+**v3 suggestions:**
+- Add RIR targets: compounds 2–3 RIR weeks 1–2, 1–2 RIR weeks 3–4, 0–1 RIR week 5; isolations 1 RIR throughout.
+- Daily 5-question readiness log (sleep, soreness, appetite, mood, motivation) — autoregulate top set when score drops.
 
-| Title | ID | Action |
-|---|---|---|
-| Full Body 1 | `e92037d2-b707-49cc-8c5b-4250fc0f1b3d` | Rename `[ARCHIVE] Full Body 1`, delete in app |
-| Full Body 2 | `ac9a87f6-7f53-4411-955c-4647a7c7e46b` | Rename `[ARCHIVE] Full Body 2`, delete in app |
-| Full Body 3 | `ec055913-9697-4495-a05d-c6270c8c4ad4` | Rename `[ARCHIVE] Full Body 3`, delete in app |
-| Body weight | `80bf3897-8953-4e01-b96c-948f7a8f4055` | Rename `[ARCHIVE] Body weight`, delete in app |
+**Verdict:** Volume distribution is now defensible; tighten autoregulation and biceps dose and this is a legitimate v3.
 
-### Custom exercise templates to delete manually
-Hevy public API does **not** support `DELETE` on exercise templates. Delete these in the app: Profile → Exercises → swipe/delete.
+### 5.8 Round 2 — Pavel Tsatsouline on v2
 
-- `Face Pull (ELAN)` — `4da56071-81b4-45b8-aea4-0452ffc2b154`
-- `Lat Pulldown (Cable) (ELAN)` — `a1c560db-a282-43f1-881e-41271c873d2b`
-- `Seated Cable Row - Elan` — `b672c418-efc2-4af1-8e3c-992fa2b2d6e8`
-- `Triceps Extension (Cable) (ELAN)` — `86947ea3-34d3-4167-a083-06ecf463581c`
-- `Triceps Rope Pushdown (ELAN)` — `b4841559-c2fb-4583-973d-ffd8a47522f7`
+**Residual critiques:**
+- A/B menu. Still wrong. You call it adherence. I call it noise. The body adapts to the stress you repeat, not the stress you choose from a menu. But fine — your choice, your results.
+- No top set. Eight reps is not heavy. Eight reps after warm-ups is jogging. One hard double before the back-offs costs nothing, teaches intent. You filed it. I unfile it every block.
+- Knee bend. Two coaches told you to add quad isolation. I told you to fix the pattern. Adding leg extensions does not fix a knee — it feeds it.
 
-No active routine references these after the rewrite — they're inert until you delete.
+**New critiques from v2:**
+- Eleven sets of side delts across three days on a GLP-1 maintenance recovery. The delt is small. You will inflame the cuff before you grow the shoulder.
+- Nordic curl with a bad knee and no squat pattern? Eccentric overload on a joint you are protecting. Foolish.
+- Triceps now nine sets, all variants long-head biased. Pick one. Stop collecting.
+
+**v3 suggestions:**
+- Drop Day 3 lat raise. Nine sets is plenty. Cuff will thank you.
+- Replace Nordic with back-loaded 45-degree hyper or seated leg curl. Same hamstring, no knee tax.
+
+**Verdict:** More volume is not more program — it is more to recover from, and this trainee has less to spend.
+
+### 5.9 Round 2 — Andy Galpin on v2
+
+**Residual critiques:**
+- Readiness log still absent. On a GLP-1 with an LBM debt, RPE drift is your only autoregulation signal — that's a hardware gap, not a nice-to-have. HRV-only is fine if daily compliance is the bottleneck.
+- Zone 2 still unaddressed. Mitochondrial density and substrate flexibility are blunted on GLP-1 caloric deficits; you're banking on lifting alone to drive aerobic base. It won't.
+- A/B variants endorsed — but no rule for *when* to rotate. Undefined = drift.
+
+**New critiques from v2:**
+- Side delts at 11 with three pressing slots and rear delt work — shoulder cuff tissue tolerance is the rate-limiter, not stimulus. Watch AC joint.
+- Quads 9 + hams 9 + glutes 9 on one bad knee across BSS/belt squat/hip thrust — recovery cost is real on a 500–700 kcal protein-prioritized intake.
+- Nordic at BUR only with no eccentric ramp-in protocol. That's a DOMS landmine week one.
+
+**v3 suggestions:**
+- Readiness MVP: single 1–10 morning score, sub-5 = drop top set, sub-3 = swap to Var B lighter. Ten seconds.
+- Z2 MVP: two 20-min walks at nasal-breathing pace, non-lifting days. Additive, sub-threshold, won't tax recovery.
+
+**Verdict:** Structurally sound, autoregulation still the weak link.
+
+### 5.10 Round 2 synthesis (→ v3)
+
+| Theme | Israetel | Norton | Tsatsouline | Galpin | Action |
+|---|---|---|---|---|---|
+| Biceps still undertrained (need 8–10) | ✓ | ✓ | — | — | **Merged.** D1 Incline Curl 3 sets added; 3 → 6 direct + pull carryover (~8 effective). |
+| Long-head triceps double-hit on D2A + D3A | ✓ | ✓ | (separate "pick one" critique) | — | **Merged.** D3A triceps Overhead → Rope Pushdown; week balances long-head (D2A + D3B) with lateral/medial (D2B + D3A). |
+| D3 lat raise junk / cuff risk | ✓ (junk volume by wk 3) | — | ✓ (cuff) | ✓ (AC joint) | **Merged.** D3 lat raise cut. Side delts 11 → 8 sets/wk. |
+| Readiness gate / autoregulation absent | — | ✓ | — | ✓ (with MVP) | **Merged.** Galpin's MVP wired into §3: 1–10 morning score, gates top set + variant swap. |
+| Nordic eccentric ramp-in missing | — | ✓ | (rejects Nordic outright) | ✓ | **Merged.** §3 includes a 5-week eccentric ramp; weeks 1–2 are eccentric-only / band-assisted. |
+| Hamstring volume audit (hinge vs knee-flex double-count) | ✓ | — | — | — | **Merged.** v3 table reflects honest count: 6 direct (3 hinge + 3 knee-flex). |
+| Biceps to 8–10 (Norton ceiling) | (8) | (9–10) | — | — | **Partial.** v3 at 6 direct + pull carryover ≈ 8 effective. Room to push higher next iteration. |
+| RIR/RPE prescription per phase | — | ✓ | — | (overlap) | **Open.** Will wire RIR-by-week targets into §3 next iteration. |
+| Z2 / aerobic base | — | — | — | ✓ (MVP: 2×20-min nasal walks) | **Open.** Trainee constraint is 3 lifting sessions; Z2 walks tracked as additive option. |
+| Calves still 6 sets (Israetel: MV-adjacent) | ✓ | — | — | — | **Not merged.** Defer; 6 hits the floor of hypertrophic range. Revisit if calves stall 4+ weeks. |
+| Side delts overcooked at 11 (Tsatsouline/Galpin cuff concerns) | (junk volume) | — | ✓ | ✓ | **Resolved via D3 cut.** Now at 8 sets/wk — Israetel's growth range, Tsatsouline/Galpin's safety band. |
+| Nordic foolish for bad knee (Pavel) | — | — | ✓ | — | **Rejected.** Norton + Galpin endorse with eccentric ramp; merged the ramp protocol. Tsatsouline overruled 3-to-1. |
+| Collapse A/B variants (Pavel reiterates) | — | — | ✓ | — | **Rejected.** Same reasoning as round 1. |
+| Heavy strength ramps before hypertrophy (Pavel reiterates) | — | — | ✓ | — | **Rejected.** Off-phase; tracked in §6 for a future strength block. |
+
+**Net v2→v3:** 6 changes merged (biceps slot, triceps angle rotation, lat raise cut, readiness gate, Nordic ramp-in, hamstring volume re-counted honestly). 2 open items added (RIR-by-phase prescription, Z2 MVP). 3 rejections carried forward (Nordic-for-knee, collapse variants, strength ramps).
 
 ---
 
-## 8. Operational notes (for future iterations)
+## 6. Open items not yet merged
 
-### Hevy API surface (what works, what doesn't)
-Base URL: `https://api.hevyapp.com`. Auth header: `api-key: <HEVY_API_KEY>`.
-
-| Endpoint | Methods supported |
-|---|---|
-| `/v1/workouts` | GET, POST |
-| `/v1/workouts/{id}` | GET, PUT |
-| `/v1/workouts/count` | GET |
-| `/v1/routines` | GET, POST |
-| `/v1/routines/{id}` | GET, PUT |
-| `/v1/routine_folders` | GET, POST |
-| `/v1/exercise_templates` | GET, POST |
-| `/v1/exercise_templates/{id}` | GET only |
-
-**No DELETE anywhere in the public API.** Renames are the workaround for "delete." Trust `Allow:` response headers, not the CORS preflight — preflight advertises DELETE but endpoints 404.
-
-Default `pageSize` is 10 for paginated endpoints. 429 workouts = 43 pages = 43 round-trips.
-
-### MCP setup
-- Server: `chrisdoc/hevy-mcp` (npm `hevy-mcp`, stdio transport)
-- Requires Node ≥26 (installed v26.3.1 via nvm 2026-06-20).
-- Requires Hevy **Pro** subscription + API key from hevy.com/settings?developer.
-- Registered at user scope: `claude mcp add-json -s user hevy '{"type":"stdio","command":"npx","args":["-y","hevy-mcp"]}'`.
-- **Env strategy:** No env block in MCP config. Subprocess inherits `HEVY_API_KEY` from the Claude Code parent process at launch. **`HEVY_API_KEY` must be exported in the shell before Claude Code launches** for the MCP to connect. If `claude mcp list` shows hevy ✘ Failed to connect, the env isn't being inherited — export the key and relaunch Claude Code.
-- MCP changes do not take effect mid-session; Claude Code must restart to pick up newly-registered servers.
-
-### Key-handling rules
-- Do not commit `HEVY_API_KEY` to any chezmoi-tracked dotfile.
-- Do not embed in the MCP `env:` config block (file persistence, hard to rotate).
-- Preferred: export in current shell when needed; rotate periodically via Hevy settings.
-
-### How to use this file in future sessions
-1. Read this `README.md` first — design decisions and current Hevy state.
-2. Updating routines: IDs in §7 are stable. Use `PUT /v1/routines/{id}` with `{"routine": {...}}` body.
-3. Creating templates: `POST /v1/exercise_templates` with `{"exercise": {"title": ..., "muscle_group": ..., "exercise_type": ..., "equipment_category": ...}}`. Allowed enums returned in the 400 Zod error if you POST `{}`.
-4. Set type values: `normal`, `warmup`, `failure`, `dropset`. Working sets are `normal`.
-5. After any routine change, update §4 (routines) and §7 (state).
-6. Pull fresh workout history: paginate `/v1/workouts?page=N&pageSize=10` until `page == page_count`.
-
-### Open Brain (cross-reference)
-After execution, capture three notes:
-- Routine design + reasoning (including persona feedback synthesis)
-- Key analysis findings (volume targets, imbalances, lean-mass context)
-- Hevy MCP wired into Claude Code on MiniM1
+1. **RIR-by-phase prescription** (Norton round 2) — Add per-week RIR targets (compounds 2–3 → 1–2 → 0–1 across a 5-week mesocycle; isolations 1 RIR throughout). Defer until baseline RIR logging habit forms.
+2. **Zone 2 MVP** (Galpin both rounds) — Two 20-min nasal-breathing walks on non-lifting days. Additive, sub-threshold. Easy to drop in once lifting program stabilizes.
+3. **Calves push to 9 sets** (Israetel round 2) — If calves stall 4+ weeks at the current 6, add a third weekly hit on Day 3.
+4. **Biceps push to 9–10** (Norton round 2) — v3 is at 6 direct + carryover. Room to push if forearm/elbow recovery permits.
+5. **Future strength-focused block** (Tsatsouline both rounds) — 4–6 week mesocycle at 5×3–5 on Bench, OHP, RDL with heavy ramps. Off-phase now; valid future option.
 
 ---
 
-## 9. Open items not yet merged into the program
+## 7. Change log
 
-1. **Morning readiness log (1–10 + HRV optional)** — Galpin/Norton flagged. Drop one set when red. Not yet wired; revisit after 4 weeks on the new program.
-2. **Zone 2 4th session (30–40 min)** — Galpin flagged. Trainee constraint is 3 lifting sessions; consider adding a non-lifting Z2 day if recovery permits.
-3. **Heavy strength block** — Tsatsouline's heavy-singles ramp argument is sound but off-phase. Revisit in a future strength-focused mesocycle (4–6 weeks at 5×3–5 on Bench, OHP, RDL).
-
----
-
-## 10. Change log
-
-- **2026-06-21** — Restructured §4 to one table per day with Home A / Home B / BUR A / BUR B columns. Stripped Elan-era historical narrative from §2. Ran adversarial review against Israetel, Norton, Tsatsouline, Galpin in §5; merged 6 changes (side delts +2 hits, quad isolation slot, BUR hams → Nordic, long-head triceps, heavy calf range, tighter deload), tracked 2 open items (readiness log, Zone 2), rejected 2 with reasoning (collapse variants, strength ramps).
-- **2026-06-20** — Initial plan built from 429-workout analysis. Decisions: 3-day rotation × 2 variants × 2 locations; no conventional deadlift (knee); RDL + Hip Thrust + Leg Curl for posterior chain; Belt Squat = cable squat; preserve existing routine IDs; rename floaters to `[ARCHIVE]` for manual deletion.
+- **2026-06-21 — v3.** Second adversarial review on v2 (round 2 by same 4 personas). 6 changes merged: D1 Incline Curl slot added (biceps 3 → 6 direct), D3A triceps Overhead → Rope Pushdown (week-level long-head/lateral balance), D3 lat raise cut (cuff/junk-volume convergence), readiness 1–10 morning gate wired into §3, Nordic 5-week eccentric ramp-in wired into §3, hamstring volume re-counted honestly (6 direct, not 9). 2 open items added (RIR-by-phase, Z2 MVP). Operational notes split out to `IMPLEMENTATION.md`. Routine tables reformatted: each cell now inlines exercise · S×R · rest.
+- **2026-06-21 — v2.** Restructured §4 to one table per day with Home A / Home B / BUR A / BUR B columns. Stripped Elan-era historical narrative from §2. First adversarial review (Israetel, Norton, Tsatsouline, Galpin). 6 changes merged: side delts 6 → 11 sets/wk, quad isolation slot added, BUR hams → Nordic, long-head triceps emphasis on D2A, heavy calf range on D1, deload tightened 6–8 → 5–7 wk. 2 tracked, 2 rejected.
+- **2026-06-20 — v1.** Initial plan built from 429-workout analysis. 3-day rotation × 2 variants × 2 locations; no conventional deadlift (knee); RDL + Hip Thrust + Leg Curl for posterior chain; Belt Squat = cable squat; preserve existing routine IDs; rename floaters to `[ARCHIVE]` for manual deletion.
