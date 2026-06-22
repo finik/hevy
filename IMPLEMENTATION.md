@@ -72,20 +72,20 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Dumbbell Row | `F1E57334` | |
 | Face Pull | `BE640BA0` | |
 | Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
-| Glute Kickback (Cable) | _resolve at execution_ | |
-| Cable Pull-Through | _resolve at execution_ | |
+| Glute Kickback (Cable) | `ACB2751D` | stock "Standing Cable Glute Kickbacks" |
+| Cable Pull-Through | `8C331CD8` | stock "Cable Pull Through" |
 | Hammer Curl (Cable) | `36E8F14E` | |
 | Hammer Curl (Dumbbell) | `7E3BC8B6` | |
-| Hamstring Curl (Cable) | _resolve at execution_ | BUR knee-flexion (ankle strap); fallback Single Leg RDL `937292AB` |
+| Standing Leg Curl (Cable) — BUR hams | `6120CAAB` | stock "Standing Leg Curls"; done with cable + ankle strap |
 | Hanging Knee Raise | `08590920` | |
 | Hanging Leg Raise | `F8356514` | |
 | Incline Bench Press (Barbell) | `50DFDFAB` | |
 | Incline Bench Press (Dumbbell) | `07B38369` | |
-| Incline Curl (Dumbbell) | _resolve at execution_ | |
+| Incline Curl (Dumbbell) | `8BAB2735` | stock "Seated Incline Curl (Dumbbell)" |
 | Lat Pulldown (Cable) | `6A6C31A5` | |
 | Lat Pulldown (Cable) (BUR) | `36548ca5-cd4d-4c26-9c8b-58540e6b2c97` | yes |
 | Lat Pulldown – Close Grip (Cable) | `4E5257DE` | |
-| Lateral Raise (Cable) | _resolve at execution_ | |
+| Lateral Raise (Cable) | `BE289E45` | |
 | Lateral Raise (Dumbbell) | `422B08F1` | |
 | Leg Extension (Home) | `d2db4633-eda0-4a53-9eb3-4b604e7d9ad8` | yes |
 | Leg Press (Machine) (BUR) | `78581019-7446-44be-bda6-83feb96f5352` | yes |
@@ -106,19 +106,19 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Single Leg Romanian Deadlift (Dumbbell) | `937292AB` | |
 | Single Leg Standing Calf Raise (Dumbbell) | `5DA40761` | |
 | Skullcrusher (Barbell) | `875F585F` | |
-| Spider Curl (Dumbbell) | _resolve at execution_ | |
+| Spider Curl (Dumbbell) | `90427D4A` | |
 | Split Squat (Dumbbell) | `20C1A3CB` | |
 | Standing Calf Raise | `06745E58` | |
 | Standing Calf Raise (Dumbbell) | `6DA40660` | |
 | Straight Arm Lat Pulldown (Cable) | `D2387AB1` | |
 | Swiss Bar Incline | `5f7bbdab-4cc9-4389-bfac-f32d30efac6d` | yes |
 | Swiss Bench Press | `8b6558c7-d41b-4a26-afdb-6bb285f31df6` | yes |
-| Trap Bar Deadlift | _resolve at execution_ | BUR only |
+| Trap Bar Deadlift | `B923B230` | stock "Deadlift (Trap bar)"; BUR only |
 | Triceps Pushdown | `93A552C6` | |
 | Triceps Rope Pushdown | `94B7239B` | |
 | Triceps Rope Pushdown (BUR) | `b1e50859-2ce0-4d97-9d17-3a25ac3677cb` | yes |
 
-> Seven IDs are placeholders (`Cable Pull-Through`, `Glute Kickback (Cable)`, `Hamstring Curl (Cable)`, `Incline Curl (Dumbbell)`, `Lateral Raise (Cable)`, `Spider Curl (Dumbbell)`, `Trap Bar Deadlift`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
+> **No custom exercises need to be created.** Every movement maps to a stock Hevy template or one of the trainee's existing customs (marked "yes"). IDs above were resolved against the cached full template list (452 templates pulled 2026-06-20). Re-verify against the live `/v1/exercise_templates` at execution in case the library changed.
 
 ---
 
