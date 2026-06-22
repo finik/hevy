@@ -31,7 +31,7 @@ Primary + 0.5×secondary.
 | Rear delts | 8 | Rear Delt Fly / Face Pull D2 (4) + D3 (4) |
 | Quads | 7 | Split Squat / Belt Squat — D1 (3) + Leg Ext / Leg Press / Trap Bar — D2 (4) |
 | Hamstrings | 9 | **Knee-flexion 6** (Leg Curl Home / Cable Curl BUR — D1 + D3) + **Hinge 3** (RDL D1) |
-| Glutes | 9 | RDL + Hip Thrust + BSS |
+| Glutes | 9 | RDL + Cable Pull-Through + BSS + kickback |
 | Biceps | 9 | Incline / Hammer Curl D1 (3 stretched) + Spider / Cable Curl D2 (3 mid) + Preacher / Cable D3 (3) |
 | Triceps | 9 effective | Overhead D2A + Pushdown D2B + Pushdown D3A + Skullcrusher D3B + press carryover |
 | Calves | 9 | Heavy 6–10 D1 (3) + High-rep 12–15 D2 (3) + D3 (3) |
@@ -119,7 +119,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 | # | Slot | Home A | Home B | BUR A | BUR B |
 |---|---|---|---|---|---|
 | 1 | Hamstrings (priority) | Lying Leg Curl (Home) — 3×10–12 · 90s | Standing Leg Curls — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s | Hamstring Curl (Cable) — 3×10–12 · 90s |
-| 2 | Glute primary | Hip Thrust (BB) — 3×8–12 · 150s | Single Leg Hip Thrust (DB) — 3×10–12/side · 120s | Hip Thrust (BB) — 3×8–12 · 150s | Single Leg Hip Thrust (DB) — 3×10–12/side · 120s |
+| 2 | Glute primary | Cable Pull-Through — 3×10–12 · 120s | Glute Kickback (Cable) — 3×12–15/side · 90s | Cable Pull-Through — 3×10–12 · 120s | Glute Kickback (Cable) — 3×12–15/side · 90s |
 | 3 | Vertical pull (close) | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s |
 | 4 | Horizontal pull #2 | Dumbbell Row — 3×8–10 · 120s | Dumbbell Row — 3×10–12 · 90s | Dumbbell Row — 3×8–10 · 120s | Single Arm Cable Row — 3×10–12 · 90s |
 | 5 | Rear delts | Rear Delt Reverse Fly (DB) — 4×12–15 · 60s | Face Pull — 4×12–15 · 60s | Rear Delt Reverse Fly (Cable) — 4×12–15 · 60s | Face Pull (BUR) — 4×12–15 · 60s |
@@ -127,7 +127,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 | 7 | Triceps (lateral/medial on A) | Triceps Rope Pushdown — 3×10–12 · 75s | Skullcrusher (BB) — Swiss — 3×10–12 · 90s | Triceps Rope Pushdown (BUR) — 3×10–12 · 75s | Skullcrusher (BB) — 3×10–12 · 90s |
 | 8 | Calves | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s | Standing Calf Raise (DB) — 3×12–15 · 90s |
 | 9 | Abs | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s | Cable Crunch — 3×12–15 · 60s | Hanging Leg Raise — 3×10–15 · 60s |
-| — | **Est. time** | **~66 min** | **~62 min** | **~66 min** | **~62 min** |
+| — | **Est. time** | **~64 min** | **~60 min** | **~64 min** | **~60 min** |
 
 ---
 

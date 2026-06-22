@@ -72,12 +72,13 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Dumbbell Row | `F1E57334` | |
 | Face Pull | `BE640BA0` | |
 | Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
+| Glute Kickback (Cable) | _resolve at execution_ | |
+| Cable Pull-Through | _resolve at execution_ | |
 | Hammer Curl (Cable) | `36E8F14E` | |
 | Hammer Curl (Dumbbell) | `7E3BC8B6` | |
 | Hamstring Curl (Cable) | _resolve at execution_ | BUR knee-flexion (ankle strap); fallback Single Leg RDL `937292AB` |
 | Hanging Knee Raise | `08590920` | |
 | Hanging Leg Raise | `F8356514` | |
-| Hip Thrust (Barbell) | `D57C2EC7` | |
 | Incline Bench Press (Barbell) | `50DFDFAB` | |
 | Incline Bench Press (Dumbbell) | `07B38369` | |
 | Incline Curl (Dumbbell) | _resolve at execution_ | |
@@ -102,7 +103,6 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Shoulder Press (Dumbbell) | `878CD1D0` | |
 | Arnold Press (Dumbbell) | `A69FF221` | |
 | Single Arm Cable Row | `D0C4A899` | |
-| Single Leg Hip Thrust (Dumbbell) | `D1CD146F` | |
 | Single Leg Romanian Deadlift (Dumbbell) | `937292AB` | |
 | Single Leg Standing Calf Raise (Dumbbell) | `5DA40761` | |
 | Skullcrusher (Barbell) | `875F585F` | |
@@ -119,7 +119,7 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Triceps Rope Pushdown | `94B7239B` | |
 | Triceps Rope Pushdown (BUR) | `b1e50859-2ce0-4d97-9d17-3a25ac3677cb` | yes |
 
-> Five IDs are placeholders (`Hamstring Curl (Cable)`, `Incline Curl (Dumbbell)`, `Lateral Raise (Cable)`, `Spider Curl (Dumbbell)`, `Trap Bar Deadlift`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
+> Seven IDs are placeholders (`Cable Pull-Through`, `Glute Kickback (Cable)`, `Hamstring Curl (Cable)`, `Incline Curl (Dumbbell)`, `Lateral Raise (Cable)`, `Spider Curl (Dumbbell)`, `Trap Bar Deadlift`) — confirm against the live `/v1/exercise_templates` lookup at execution time. If not present in the stock library, create custom templates and record the IDs.
 
 ---
 
