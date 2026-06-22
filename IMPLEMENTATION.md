@@ -18,28 +18,28 @@ Operational reference for working with the Hevy account, the API, the MCP integr
 
 | Title | ID | Folder | Status |
 |---|---|---|---|
-| Day 1A (Home) | `e90cc7ec-e5a1-4f58-9af9-5e551dd76ea8` | Home | Rewrite in place when executing |
-| Day 2A (Home) | `caf5183d-0d7e-4687-b443-dc384e9fcd6e` | Home | Rewrite in place when executing |
-| Day 3A (Home) | `1488fcbc-fcad-4b4c-8e5a-8b11510391fd` | Home | Rewrite in place when executing |
-| Day 1A (BUR) | `7dfbbfe7-5b6b-477c-9e00-d1500c1e4e67` | BUR | Rewrite in place when executing |
-| Day 2A (BUR) | `57f9617a-b2cb-4b2c-8506-2d526b0e8713` | BUR | Rewrite in place when executing |
-| Day 3A (BUR) | `5b59e036-9271-4a62-b7dc-a7c2e4af9551` | BUR | Rewrite in place when executing |
-| Day 1B (Home) | _to be filled_ | Home | Create |
-| Day 2B (Home) | _to be filled_ | Home | Create |
-| Day 3B (Home) | _to be filled_ | Home | Create |
-| Day 1B (BUR) | _to be filled_ | BUR | Create |
-| Day 2B (BUR) | _to be filled_ | BUR | Create |
-| Day 3B (BUR) | _to be filled_ | BUR | Create |
+| Day 1A (Home) | `e90cc7ec-e5a1-4f58-9af9-5e551dd76ea8` | Home | Rewritten in place ✓ |
+| Day 2A (Home) | `caf5183d-0d7e-4687-b443-dc384e9fcd6e` | Home | Rewritten in place ✓ |
+| Day 3A (Home) | `1488fcbc-fcad-4b4c-8e5a-8b11510391fd` | Home | Rewritten in place ✓ |
+| Day 1A (BUR) | `7dfbbfe7-5b6b-477c-9e00-d1500c1e4e67` | BUR | Rewritten in place ✓ |
+| Day 2A (BUR) | `57f9617a-b2cb-4b2c-8506-2d526b0e8713` | BUR | Rewritten in place ✓ |
+| Day 3A (BUR) | `5b59e036-9271-4a62-b7dc-a7c2e4af9551` | BUR | Rewritten in place ✓ |
+| Day 1B (Home) | `3a9e4154-ba85-44df-a297-371a373b58b1` | Home | Created |
+| Day 2B (Home) | `5484feba-81bf-45e2-92b9-69fd33aadaa6` | Home | Created |
+| Day 3B (Home) | `c78697f9-d862-4943-9382-19c296ae1726` | Home | Created |
+| Day 1B (BUR) | `6828bec5-c90b-49f9-8d04-93a4a626a5bd` | BUR | Created |
+| Day 2B (BUR) | `96e333e3-0411-4023-8358-d0d6c5a84c80` | BUR | Created |
+| Day 3B (BUR) | `1aa1500a-23d8-44cc-9893-717d8d28cabf` | BUR | Created |
 
-### Stale routines — rename to `[ARCHIVE]`, delete in app
-Hevy's API doesn't support routine `DELETE`. Rename via `PUT /v1/routines/{id}`, then the user deletes in the app.
+### Stale routines — archived ✓ (delete in app)
+Hevy's API doesn't support routine `DELETE`. These were renamed with the `[ARCHIVE]` prefix via `PUT`. **You delete them in the app** (long-press → delete).
 
 | Title | ID |
 |---|---|
-| Full Body 1 | `e92037d2-b707-49cc-8c5b-4250fc0f1b3d` |
-| Full Body 2 | `ac9a87f6-7f53-4411-955c-4647a7c7e46b` |
-| Full Body 3 | `ec055913-9697-4495-a05d-c6270c8c4ad4` |
-| Body weight | `80bf3897-8953-4e01-b96c-948f7a8f4055` |
+| [ARCHIVE] Full Body 1 | `e92037d2-b707-49cc-8c5b-4250fc0f1b3d` |
+| [ARCHIVE] Full Body 2 | `ac9a87f6-7f53-4411-955c-4647a7c7e46b` |
+| [ARCHIVE] Full Body 3 | `ec055913-9697-4495-a05d-c6270c8c4ad4` |
+| [ARCHIVE] Body weight | `80bf3897-8953-4e01-b96c-948f7a8f4055` |
 
 ### Custom exercise templates to delete manually
 `DELETE /v1/exercise_templates/{id}` does not exist. Delete these in-app (Profile → Exercises → swipe/delete). No active routine references them after the rewrite.
