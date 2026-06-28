@@ -15,11 +15,11 @@ Operational reference for working with the Hevy account, the API, the MCP integr
 | BUR | `1975900` |
 | Travel | `3124163` |
 
-### Travel routines (created)
-| Title | ID | Folder |
-|---|---|---|
-| Hotel 1 — DB + Bench | `88260512-0cb4-4153-960a-a97ecabc43fe` | Travel |
-| Hotel 2 — DB + Bench + Cable | `98c592d6-9cc0-4594-a3c4-52fa52e56ae1` | Travel |
+### Travel routines
+| Title | ID | Folder | Notes |
+|---|---|---|---|
+| Hotel (Travel) | `88260512-0cb4-4153-960a-a97ecabc43fe` | Travel | Combined single routine; 6 "choose-one" superset pairs (DB or cable) + 4 fixed DB singles |
+| [ARCHIVE] Hotel 2 (merged) | `98c592d6-9cc0-4594-a3c4-52fa52e56ae1` | Travel | Merged into Hotel (Travel); delete in app |
 
 ### Routines
 

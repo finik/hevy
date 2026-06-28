@@ -169,43 +169,26 @@ None of these block the program — the panel approved as-is. They're the dissen
 
 ## 7. Travel / hotel program
 
-**Real hypertrophy-retention training, not bare maintenance** — the trainee trains full ~60–70 min sessions even while traveling, so these are full-body sessions limited only by hotel equipment and the knee. Done 2–3× per trip. **~11 movements, 3 working sets each.** The lead compound (DB bench) gets an **AMRAP** final set. Train **0–2 RIR** — light hotel loads mean you must train close to failure.
+**Real hypertrophy-retention training, not bare maintenance** — the trainee trains 3×/week even while traveling. **One full-body routine, done 3×/week**, repeatable. Full-body 3× = ~9 sets/muscle/week, matching the home targets. The lead bench gets an **AMRAP** final set. Train **0–2 RIR** — light hotel loads mean training close to failure.
 
-Two workouts, by what the hotel gym has. Hevy routine IDs in [IMPLEMENTATION.md §1](./IMPLEMENTATION.md#1-hevy-account-state).
+**One routine, equipment-agnostic.** Six slots are fixed dumbbell movements (always do them). The other slots are **"choose one" superset pairs** — a DB option and a cable option grouped together; do whichever the hotel gym supports, not both. (Hevy has no native "exercise alternative," so the superset bracket is repurposed as the either/or cue — see the feature request we filed.)
 
-### Hotel 1 — Dumbbells + bench
+Hevy routine: **Hotel (Travel)** (`88260512-…`), Travel folder. IDs in [IMPLEMENTATION.md §1](./IMPLEMENTATION.md#1-hevy-account-state).
 
-| # | Exercise | Sets × Reps |
-|---|---|---|
-| 1 | DB Bench Press (+ AMRAP last set) | 3 × 6–10 |
-| 2 | One-Arm DB Row | 3 × 8–12 / side |
-| 3 | DB Pullover (vertical pull) | 3 × 10–15 |
-| 4 | DB Romanian Deadlift (tempo) | 3 × 12–20 |
-| 5 | DB Box Step-up (tempo) | 3 × 12–20 / side |
-| 6 | DB Seated Overhead Press | 3 × 8–12 |
-| 7 | DB Lateral Raise | 3 × 12–20 |
-| 8 | DB Incline Curl | 3 × 10–15 |
-| 9 | DB Skullcrusher | 3 × 10–15 |
-| 10 | DB Standing Calf Raise | 3 × 12–20 |
-| 11 | Weighted Crunch | 3 × 12–15 |
-| — | **Est. time** | **~70 min** |
+| Slot | DB option (dumbbells only) | Cable option (functional trainer) | Sets × Reps |
+|---|---|---|---|
+| 1 — Chest | **DB Bench Press** (+ AMRAP last set) | *(same)* | 3 × 6–10 |
+| 2 — Back ⟮pick 1⟯ | One-Arm DB Row | Cable Row | 3 × 8–12 |
+| 3 — Hinge ⟮pick 1⟯ | DB Romanian Deadlift *(tempo)* | Cable Pull-Through *(tempo)* | 3 × 12–20 |
+| 4 — Quad | **DB Box Step-up** *(tempo)* | *(same)* | 3 × 12–20 / side |
+| 5 — Shoulders | **DB Overhead Press** | *(same)* | 3 × 8–12 |
+| 6 — Side delts ⟮pick 1⟯ | DB Lateral Raise | Cable Lateral Raise | 3 × 12–20 |
+| 7 — Rear delts ⟮pick 1⟯ | Chest-Supported Reverse Fly | Cable Face Pull | 3 × 12–20 |
+| 8 — Biceps ⟮pick 1⟯ | DB Incline Curl | Cable Curl | 3 × 10–15 |
+| 9 — Triceps ⟮pick 1⟯ | DB Skullcrusher | Cable Pushdown | 3 × 10–15 |
+| 10 — Calves | **DB Standing Calf Raise** | *(same)* | 3 × 12–20 |
 
-### Hotel 2 — Dumbbells + bench + functional trainer
-
-| # | Exercise | Sets × Reps |
-|---|---|---|
-| 1 | DB Bench Press (+ AMRAP last set) | 3 × 6–10 |
-| 2 | Cable Row (horizontal pull) | 3 × 10–12 |
-| 3 | Lat Pulldown (vertical pull) | 3 × 10–12 |
-| 4 | Cable Pull-Through (tempo) | 3 × 12–20 |
-| 5 | DB Box Step-up (tempo) | 3 × 12–20 / side |
-| 6 | DB Overhead Press | 3 × 8–12 |
-| 7 | Cable Lateral Raise | 3 × 12–20 |
-| 8 | Cable Face Pull | 3 × 15–20 |
-| 9 | Cable Curl | 3 × 10–15 |
-| 10 | Cable Triceps Pushdown | 3 × 10–15 |
-| 11 | DB Standing Calf Raise | 3 × 12–20 |
-| — | **Est. time** | **~70 min** |
+You perform **10 movements** per session (~65 min): the 4 fixed singles + one from each of the 6 pairs. In Hevy that's 16 exercise rows (4 singles + 6 superset pairs).
 
 **Light-DB protocol — the travel variable.** Hotel DBs cap ~50 lb on the low end, which under-loads the hinge, legs, and pressing for a strong lifter. Convert the load ceiling into tension and failure proximity:
 - **3-second lowering** on every rep.
