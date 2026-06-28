@@ -183,6 +183,7 @@ Two workouts, by what the hotel gym has. Hevy routine IDs in [IMPLEMENTATION.md 
 | 4 | DB Box Step-up | 2 × 10–12 / side |
 | 5 | DB Lateral Raise | 2 × 12–20 |
 | 6 | Farmers Carry | 2 × ~40 m |
+| — | **Est. time** | **~32 min** |
 
 ### Hotel 2 — Dumbbells + bench + functional trainer
 
@@ -194,6 +195,7 @@ Two workouts, by what the hotel gym has. Hevy routine IDs in [IMPLEMENTATION.md 
 | 4 | DB Box Step-up | 2 × 10–12 / side |
 | 5 | Cable Lateral Raise | 2 × 12–20 |
 | 6 | Cable Face Pull | 2 × 15–20 |
+| — | **Est. time** | **~30 min** |
 
 **Dumbbell ceiling — the travel variable.** Hotel DBs vary; some cap at 50 lb, some go heavier. When the DBs are too light to put you within 1–3 RIR in the listed range, don't just pile on endless easy reps — instead: take the last set to **true failure**, slow the lowering to **3–4 s**, add a **pause or partials** at the sticking point, or use **1.5-reps**. When heavier DBs are available, load up and work the **lower** rep end.
 

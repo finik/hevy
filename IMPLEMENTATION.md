@@ -70,7 +70,7 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 |---|---|---|
 | Belt Squat (= cable squat) | `e05d4883-21c8-4e27-abe2-d727abed2715` | yes |
 | Bench Press (Barbell) | `79D0BB3A` | |
-| Bench Press (Dumbbell) | `D04AC939` | |
+| Bench Press (Dumbbell) | `3601968B` | (was wrongly `D04AC939` = Squat (Barbell)) |
 | Bicep Curl (Cable) | `ADA8623C` | |
 | Bicep Curl (Dumbbell) | `37FCC2BB` | |
 | Bulgarian Split Squat | `B5D3A742` | |
