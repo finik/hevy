@@ -44,13 +44,15 @@ Primary + 0.5×secondary.
 ## 3. Program design
 
 ### Architecture
-**3 days × 2 variants × 2 locations = 12 routines.** Train 3×/wk, one variant of each day per week. Home or BUR decided ad hoc.
+**3 days × 2 locations = 6 routines.** Train 3×/wk, one Day per session. Home or BUR decided ad hoc.
 
 - **Day 1** — Press + Hinge + Vertical Pull
 - **Day 2** — OHP + Quad + Horizontal Pull
 - **Day 3** — Posterior + Pull + Arms (hamstrings opened first)
 
-Variant A: heavier compound baseline (lower reps, longer rest). Variant B: variety with Swiss bar / DBs / cables (moderate reps, shorter rest).
+**Variants A and B live inside one routine as "choose one" superset pairs.** Each slot that has two valid options shows them as a bracketed pair in Hevy — **A (top) = heavier/compound** (lower reps, longer rest), **B (bottom) = variation** (Swiss bar / DB / cable, moderate reps). Pick one per slot; do not do both. Run a "pure A day" by always taking the top of each bracket, or mix for variety. Slots where A and B are the same movement are plain single exercises. The §4 tables below show the A and B options side by side — that's the content of each bracket.
+
+*(History note: this was 12 separate routines (Day N × A/B × location); the A/B variants were merged into choose-one pairs to cut it to 6. The old B routines are archived in Hevy.)*
 
 ### Double progression
 1. Start at the **bottom** of the rep range with a weight finishable at all sets at RIR 2.

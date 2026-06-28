@@ -21,28 +21,30 @@ Operational reference for working with the Hevy account, the API, the MCP integr
 | Hotel (Travel) | `88260512-0cb4-4153-960a-a97ecabc43fe` | Travel | Combined single routine; 6 "choose-one" superset pairs (DB or cable) + 4 fixed DB singles |
 | [ARCHIVE] Hotel 2 (merged) | `98c592d6-9cc0-4594-a3c4-52fa52e56ae1` | Travel | Merged into Hotel (Travel); delete in app |
 
-### Routines
+### Routines (6 consolidated — A/B merged into choose-one superset pairs)
 
-| Title | ID | Folder | Status |
+| Title | ID | Folder | Rows / perform |
 |---|---|---|---|
-| Day 1A (Home) | `e90cc7ec-e5a1-4f58-9af9-5e551dd76ea8` | Home | Rewritten in place ✓ |
-| Day 2A (Home) | `caf5183d-0d7e-4687-b443-dc384e9fcd6e` | Home | Rewritten in place ✓ |
-| Day 3A (Home) | `1488fcbc-fcad-4b4c-8e5a-8b11510391fd` | Home | Rewritten in place ✓ |
-| Day 1A (BUR) | `7dfbbfe7-5b6b-477c-9e00-d1500c1e4e67` | BUR | Rewritten in place ✓ |
-| Day 2A (BUR) | `57f9617a-b2cb-4b2c-8506-2d526b0e8713` | BUR | Rewritten in place ✓ |
-| Day 3A (BUR) | `5b59e036-9271-4a62-b7dc-a7c2e4af9551` | BUR | Rewritten in place ✓ |
-| Day 1B (Home) | `3a9e4154-ba85-44df-a297-371a373b58b1` | Home | Created |
-| Day 2B (Home) | `5484feba-81bf-45e2-92b9-69fd33aadaa6` | Home | Created |
-| Day 3B (Home) | `c78697f9-d862-4943-9382-19c296ae1726` | Home | Created |
-| Day 1B (BUR) | `6828bec5-c90b-49f9-8d04-93a4a626a5bd` | BUR | Created |
-| Day 2B (BUR) | `96e333e3-0411-4023-8358-d0d6c5a84c80` | BUR | Created |
-| Day 3B (BUR) | `1aa1500a-23d8-44cc-9893-717d8d28cabf` | BUR | Created |
+| Day 1 (Home) | `e90cc7ec-e5a1-4f58-9af9-5e551dd76ea8` | Home | 16 / 9 |
+| Day 2 (Home) | `caf5183d-0d7e-4687-b443-dc384e9fcd6e` | Home | 17 / 9 |
+| Day 3 (Home) | `1488fcbc-fcad-4b4c-8e5a-8b11510391fd` | Home | 15 / 9 |
+| Day 1 (BUR) | `7dfbbfe7-5b6b-477c-9e00-d1500c1e4e67` | BUR | 15 / 9 |
+| Day 2 (BUR) | `57f9617a-b2cb-4b2c-8506-2d526b0e8713` | BUR | 16 / 9 |
+| Day 3 (BUR) | `5b59e036-9271-4a62-b7dc-a7c2e4af9551` | BUR | 16 / 9 |
+
+The 6 IDs above are the former "A" routines, rewritten in place. "Rows" = exercise entries in Hevy (singles + both halves of each superset pair); "perform" = movements done per session (one from each pair).
 
 ### Stale routines — archived ✓ (delete in app)
 Hevy's API doesn't support routine `DELETE`. These were renamed with the `[ARCHIVE]` prefix via `PUT`. **You delete them in the app** (long-press → delete).
 
 | Title | ID |
 |---|---|
+| [ARCHIVE] Day 1B (Home) | `3a9e4154-ba85-44df-a297-371a373b58b1` |
+| [ARCHIVE] Day 2B (Home) | `5484feba-81bf-45e2-92b9-69fd33aadaa6` |
+| [ARCHIVE] Day 3B (Home) | `c78697f9-d862-4943-9382-19c296ae1726` |
+| [ARCHIVE] Day 1B (BUR) | `6828bec5-c90b-49f9-8d04-93a4a626a5bd` |
+| [ARCHIVE] Day 2B (BUR) | `96e333e3-0411-4023-8358-d0d6c5a84c80` |
+| [ARCHIVE] Day 3B (BUR) | `1aa1500a-23d8-44cc-9893-717d8d28cabf` |
 | [ARCHIVE] Full Body 1 | `e92037d2-b707-49cc-8c5b-4250fc0f1b3d` |
 | [ARCHIVE] Full Body 2 | `ac9a87f6-7f53-4411-955c-4647a7c7e46b` |
 | [ARCHIVE] Full Body 3 | `ec055913-9697-4495-a05d-c6270c8c4ad4` |
