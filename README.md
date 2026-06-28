@@ -164,3 +164,39 @@ None of these block the program — the panel approved as-is. They're the dissen
 **Not acted on, by design:**
 - Tsatsouline: collapse variants / heavy strength singles / cut bicep volume — off-phase for hypertrophy + LBM reaccrual.
 - Galpin: explicit protein targets / intra-session carbs — out of scope (training only).
+
+---
+
+## 7. Travel / hotel program
+
+Maintenance, not growth. Full-body, done 2–3× per trip, ad hoc. **6 movements, 2 working sets each**, ~30–35 min. The lead compound gets an optional 3rd **AMRAP** back-off set. Train **1–3 RIR** — closer to failure on the isolations (light loads demand it), leave 2–3 in reserve when jet-lagged / under-slept / under-fueled. Controlled tempo.
+
+Two workouts, by what the hotel gym has. Hevy routine IDs in [IMPLEMENTATION.md §1](./IMPLEMENTATION.md#1-hevy-account-state).
+
+### Hotel 1 — Dumbbells + bench
+
+| # | Exercise | Sets × Reps |
+|---|---|---|
+| 1 | DB Bench Press (+ optional AMRAP) | 2 × 8–12 |
+| 2 | One-Arm DB Row | 2 × 8–12 / side |
+| 3 | DB Romanian Deadlift | 2 × 10–15 |
+| 4 | DB Box Step-up | 2 × 10–12 / side |
+| 5 | DB Lateral Raise | 2 × 12–20 |
+| 6 | Farmers Carry | 2 × ~40 m |
+
+### Hotel 2 — Dumbbells + bench + functional trainer
+
+| # | Exercise | Sets × Reps |
+|---|---|---|
+| 1 | DB Bench Press (+ optional AMRAP) | 2 × 8–12 |
+| 2 | Cable Row | 2 × 10–12 |
+| 3 | Cable Pull-Through | 2 × 12–15 |
+| 4 | DB Box Step-up | 2 × 10–12 / side |
+| 5 | Cable Lateral Raise | 2 × 12–20 |
+| 6 | Cable Face Pull | 2 × 15–20 |
+
+**Dumbbell ceiling — the travel variable.** Hotel DBs vary; some cap at 50 lb, some go heavier. When the DBs are too light to put you within 1–3 RIR in the listed range, don't just pile on endless easy reps — instead: take the last set to **true failure**, slow the lowering to **3–4 s**, add a **pause or partials** at the sticking point, or use **1.5-reps**. When heavier DBs are available, load up and work the **lower** rep end.
+
+**Single-leg / knee note.** Box Step-up to a controlled, pain-free height. Knee good → progress to Bulgarian split squat / reverse lunge to controlled depth. Knee cranky → lower the box / reduce ROM.
+
+**Panel.** Settled over 3 rounds — all four (Israetel, Norton, Tsatsouline, Galpin) APPROVE. Consensus: trim to ~6 movements and 2 sets (maintenance needs a fraction of growth volume; adherence on the road is the real variable), proximity-to-failure is the driver under the light-DB ceiling, include a loaded carry, keep the single-leg knee-friendly.

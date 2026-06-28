@@ -8,11 +8,18 @@ Operational reference for working with the Hevy account, the API, the MCP integr
 
 ## 1. Hevy account state
 
-### Folders (preserved, IDs unchanged)
+### Folders
 | Title | ID |
 |---|---|
 | Home | `240862` |
 | BUR | `1975900` |
+| Travel | `3124163` |
+
+### Travel routines (created)
+| Title | ID | Folder |
+|---|---|---|
+| Hotel 1 — DB + Bench | `88260512-0cb4-4153-960a-a97ecabc43fe` | Travel |
+| Hotel 2 — DB + Bench + Cable | `98c592d6-9cc0-4594-a3c4-52fa52e56ae1` | Travel |
 
 ### Routines
 
@@ -70,8 +77,10 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Cable Crunch | `23A48484` | |
 | Chest Fly (Dumbbell) | `12017185` | |
 | Cross Body Hammer Curl | `32C4D4A2` | |
-| Dumbbell Row | `F1E57334` | |
+| Dumbbell Row | `F1E57334` | one-arm row (travel) |
+| Dumbbell Step Up | `BF6ECE89` | travel single-leg |
 | Face Pull | `BE640BA0` | |
+| Farmers Walk | `50C613D0` | travel carry |
 | Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
 | Glute Kickback (Cable) | `ACB2751D` | stock "Standing Cable Glute Kickbacks" |
 | Cable Pull-Through | `8C331CD8` | stock "Cable Pull Through" |
