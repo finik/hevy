@@ -169,7 +169,7 @@ None of these block the program — the panel approved as-is. They're the dissen
 
 ## 7. Travel / hotel program
 
-Maintenance, not growth. Full-body, done 2–3× per trip, ad hoc. **6 movements, 2 working sets each**, ~30–35 min. The lead compound gets an optional 3rd **AMRAP** back-off set. Train **1–3 RIR** — closer to failure on the isolations (light loads demand it), leave 2–3 in reserve when jet-lagged / under-slept / under-fueled. Controlled tempo.
+**Real hypertrophy-retention training, not bare maintenance** — the trainee trains full ~60–70 min sessions even while traveling, so these are full-body sessions limited only by hotel equipment and the knee. Done 2–3× per trip. **~11 movements, 3 working sets each.** The lead compound (DB bench) gets an **AMRAP** final set. Train **0–2 RIR** — light hotel loads mean you must train close to failure.
 
 Two workouts, by what the hotel gym has. Hevy routine IDs in [IMPLEMENTATION.md §1](./IMPLEMENTATION.md#1-hevy-account-state).
 
@@ -177,28 +177,43 @@ Two workouts, by what the hotel gym has. Hevy routine IDs in [IMPLEMENTATION.md 
 
 | # | Exercise | Sets × Reps |
 |---|---|---|
-| 1 | DB Bench Press (+ optional AMRAP) | 2 × 8–12 |
-| 2 | One-Arm DB Row | 2 × 8–12 / side |
-| 3 | DB Romanian Deadlift | 2 × 10–15 |
-| 4 | DB Box Step-up | 2 × 10–12 / side |
-| 5 | DB Lateral Raise | 2 × 12–20 |
-| 6 | Farmers Carry | 2 × ~40 m |
-| — | **Est. time** | **~32 min** |
+| 1 | DB Bench Press (+ AMRAP last set) | 3 × 6–10 |
+| 2 | One-Arm DB Row | 3 × 8–12 / side |
+| 3 | DB Pullover (vertical pull) | 3 × 10–15 |
+| 4 | DB Romanian Deadlift (tempo) | 3 × 12–20 |
+| 5 | DB Box Step-up (tempo) | 3 × 12–20 / side |
+| 6 | DB Seated Overhead Press | 3 × 8–12 |
+| 7 | DB Lateral Raise | 3 × 12–20 |
+| 8 | DB Incline Curl | 3 × 10–15 |
+| 9 | DB Skullcrusher | 3 × 10–15 |
+| 10 | DB Standing Calf Raise | 3 × 12–20 |
+| 11 | Weighted Crunch | 3 × 12–15 |
+| — | **Est. time** | **~70 min** |
 
 ### Hotel 2 — Dumbbells + bench + functional trainer
 
 | # | Exercise | Sets × Reps |
 |---|---|---|
-| 1 | DB Bench Press (+ optional AMRAP) | 2 × 8–12 |
-| 2 | Cable Row | 2 × 10–12 |
-| 3 | Cable Pull-Through | 2 × 12–15 |
-| 4 | DB Box Step-up | 2 × 10–12 / side |
-| 5 | Cable Lateral Raise | 2 × 12–20 |
-| 6 | Cable Face Pull | 2 × 15–20 |
-| — | **Est. time** | **~30 min** |
+| 1 | DB Bench Press (+ AMRAP last set) | 3 × 6–10 |
+| 2 | Cable Row (horizontal pull) | 3 × 10–12 |
+| 3 | Lat Pulldown (vertical pull) | 3 × 10–12 |
+| 4 | Cable Pull-Through (tempo) | 3 × 12–20 |
+| 5 | DB Box Step-up (tempo) | 3 × 12–20 / side |
+| 6 | DB Overhead Press | 3 × 8–12 |
+| 7 | Cable Lateral Raise | 3 × 12–20 |
+| 8 | Cable Face Pull | 3 × 15–20 |
+| 9 | Cable Curl | 3 × 10–15 |
+| 10 | Cable Triceps Pushdown | 3 × 10–15 |
+| 11 | DB Standing Calf Raise | 3 × 12–20 |
+| — | **Est. time** | **~70 min** |
 
-**Dumbbell ceiling — the travel variable.** Hotel DBs vary; some cap at 50 lb, some go heavier. When the DBs are too light to put you within 1–3 RIR in the listed range, don't just pile on endless easy reps — instead: take the last set to **true failure**, slow the lowering to **3–4 s**, add a **pause or partials** at the sticking point, or use **1.5-reps**. When heavier DBs are available, load up and work the **lower** rep end.
+**Light-DB protocol — the travel variable.** Hotel DBs cap ~50 lb on the low end, which under-loads the hinge, legs, and pressing for a strong lifter. Convert the load ceiling into tension and failure proximity:
+- **3-second lowering** on every rep.
+- **1–2 s pause in the stretched position** on presses, rows, the hinge, and the step-up.
+- **Last set of each movement:** add 1.5-reps, partials at the hard point, or go to true failure.
+- **Hinge + step-up specifically:** run 12–20 reps with the slow eccentric + stretched pause — that's where the light bells bite least, so tension technique matters most.
+- When heavier DBs are available, just load up and work the lower rep end normally.
 
 **Single-leg / knee note.** Box Step-up to a controlled, pain-free height. Knee good → progress to Bulgarian split squat / reverse lunge to controlled depth. Knee cranky → lower the box / reduce ROM.
 
-**Panel.** Settled over 3 rounds — all four (Israetel, Norton, Tsatsouline, Galpin) APPROVE. Consensus: trim to ~6 movements and 2 sets (maintenance needs a fraction of growth volume; adherence on the road is the real variable), proximity-to-failure is the driver under the light-DB ceiling, include a loaded carry, keep the single-leg knee-friendly.
+**Panel.** Settled over multiple rounds — all four (Israetel, Norton, Tsatsouline, Galpin) APPROVE. The minimalist first draft was rebuilt fuller once the trainee confirmed adherence/time is not a travel constraint. Final consensus: full-body 3-set volume balanced front-to-back, a **vertical pull in both setups** (DB Pullover / Lat Pulldown — the gap Norton caught), and an explicit **tempo/pause/failure protocol** to beat the light-DB ceiling (Tsatsouline + Galpin).

@@ -77,10 +77,14 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Cable Crunch | `23A48484` | |
 | Chest Fly (Dumbbell) | `12017185` | |
 | Cross Body Hammer Curl | `32C4D4A2` | |
+| Crunch (Weighted) | `D928C232` | travel abs |
 | Dumbbell Row | `F1E57334` | one-arm row (travel) |
 | Dumbbell Step Up | `BF6ECE89` | travel single-leg |
 | Face Pull | `BE640BA0` | |
-| Farmers Walk | `50C613D0` | travel carry |
+| Farmers Walk | `50C613D0` | (dropped from v5 travel) |
+| Pullover (Dumbbell) | `67280085` | travel vertical pull (Setup 1) |
+| Seated Incline Curl (Dumbbell) | `8BAB2735` | = Incline Curl |
+| Skullcrusher (Dumbbell) | `68F8A292` | travel triceps |
 | Face Pull (BUR) | `dcb574e5-54da-4d09-bb32-7a13e9940bea` | yes |
 | Glute Kickback (Cable) | `ACB2751D` | stock "Standing Cable Glute Kickbacks" |
 | Cable Pull-Through | `8C331CD8` | stock "Cable Pull Through" |
