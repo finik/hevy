@@ -31,7 +31,7 @@ Primary + 0.5×secondary.
 | Rear delts | 8 | Rear Delt Fly / Face Pull D2 (4) + D3 (4) |
 | Quads | 7 | Split Squat / Belt Squat — D1 (3) + Leg Ext / Leg Press / Trap Bar — D2 (4) |
 | Hamstrings | 9 | **Knee-flexion 6** (Leg Curl Home / Cable Curl BUR — D1 + D3) + **Hinge 3** (RDL D1) |
-| Glutes | 9 | RDL + Cable Pull-Through + BSS + kickback |
+| Glutes | 9 | RDL + Single-Leg DB Hip Thrust / Cable Pull-Through + BSS |
 | Biceps | 9 | Incline / Hammer Curl D1 (3 stretched) + Spider / Cable Curl D2 (3 mid) + Preacher / Cable D3 (3) |
 | Triceps | 9 effective | Overhead D2A + Pushdown D2B + Pushdown D3A + Skullcrusher D3B + press carryover |
 | Calves | 9 | Heavy 6–10 D1 (3) + High-rep 12–15 D2 (3) + D3 (3) |
@@ -121,7 +121,7 @@ The **Est. time** row is moving time per variant — assumes ~40 s per working s
 | # | Slot | Home A | Home B | BUR A | BUR B |
 |---|---|---|---|---|---|
 | 1 | Hamstrings (priority) | Lying Leg Curl (Home) — 3×10–12 · 90s | Lying Leg Curl (Home) — 3×12–15 · 90s | Standing Leg Curl (Cable) — 3×10–12 · 90s | Standing Leg Curl (Cable) — 3×10–12 · 90s |
-| 2 | Glute primary | Cable Pull-Through — 3×10–12 · 120s | Glute Kickback (Cable) — 3×12–15/side · 90s | Cable Pull-Through — 3×10–12 · 120s | Glute Kickback (Cable) — 3×12–15/side · 90s |
+| 2 | Glute primary ⟮pick 1⟯ | Single Leg Hip Thrust (DB) — 3×10–12/side · 120s | Cable Pull-Through — 3×10–15 · 90s | Single Leg Hip Thrust (DB) — 3×10–12/side · 120s | Cable Pull-Through — 3×10–15 · 90s |
 | 3 | Vertical pull (close) | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s | Lat Pulldown — Close Grip — 3×8–10 · 120s | Straight Arm Lat Pulldown (Cable) — 3×10–12 · 90s |
 | 4 | Horizontal pull #2 | Dumbbell Row — 3×8–10 · 120s | Dumbbell Row — 3×10–12 · 90s | Dumbbell Row — 3×8–10 · 120s | Single Arm Cable Row — 3×10–12 · 90s |
 | 5 | Rear delts | Rear Delt Reverse Fly (DB) — 4×12–15 · 60s | Face Pull — 4×12–15 · 60s | Rear Delt Reverse Fly (Cable) — 4×12–15 · 60s | Face Pull (BUR) — 4×12–15 · 60s |
@@ -150,6 +150,10 @@ Four reviewers (Mike Israetel, Layne Norton, Pavel Tsatsouline, Andy Galpin) wer
 
 ### Andy Galpin (performance scientist) — APPROVE
 > Quads at 7 direct sets/week with a trap-bar deadlift anchoring bilateral load is plenty for LBM preservation on a GLP-1 deficit — hypertrophy lives at intensity and proximity to failure, not set-count maximalism. Losing the Nordic costs you the long-length eccentric, but cable curls at 2x/week protect the hamstring tissue and the knee-flexion separation is what matters here; the eccentric was always a fatigue tax you don't need right now.
+
+### Final validation (post-consolidation)
+
+After the 12→6 consolidation and the hip-thrust removal, the panel was re-run to validate. **Consolidation:** all four confirm it's packaging-only — same exercises/sets/reps/rest, no effect on stimulus. **Glute swap:** 3 of 4 (Israetel, Norton, Tsatsouline) flagged that dropping the hip thrust deleted the only loaded peak-contraction bridge pattern; Galpin judged cable-only adequate for maintenance. Resolution: **Single-Leg DB Hip Thrust restored** as the Day 3 glute primary (choose-one with Cable Pull-Through) — a loadable bridge that isn't the awkward barbell version. All four now satisfied.
 
 ---
 

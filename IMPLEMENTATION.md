@@ -119,6 +119,7 @@ Used by the routine tables in `README.md` §4. If a template isn't found at exec
 | Shoulder Press (Dumbbell) | `878CD1D0` | |
 | Arnold Press (Dumbbell) | `A69FF221` | |
 | Single Arm Cable Row | `D0C4A899` | |
+| Single Leg Hip Thrust (Dumbbell) | `D1CD146F` | Day 3 glute (panel-restored loaded bridge) |
 | Single Leg Romanian Deadlift (Dumbbell) | `937292AB` | |
 | Single Leg Standing Calf Raise (Dumbbell) | `5DA40761` | |
 | Skullcrusher (Barbell) | `875F585F` | |
